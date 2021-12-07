@@ -3,9 +3,9 @@ install:
 build:
 	@poetry build
 shell:
-	@poetry shell
+	@python manage.py shell_plus --plain
 run:
-	@poetry run gunicorn -w 4 task_manager.wsgi
+	@poetry run gunicorn -w 4 task_manager.wsgi :8080
 lint:
 	@poetry run flake8 task_manager/
 requirements:
