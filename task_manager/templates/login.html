@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+    <form>
+        <h1 class="h3 mb-3 fw-normal">Login</h1>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Nickname">
+            <label for="floatingInput">Nickname address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <!--
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        -->
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+    </form>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

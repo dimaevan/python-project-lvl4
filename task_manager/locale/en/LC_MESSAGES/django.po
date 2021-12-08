@@ -44,7 +44,7 @@ msgstr "Users"
 
 #: task_manager/templates/nav.html:19
 msgid "Вход"
-msgstr "Users"
+msgstr "Login"
 
 #: task_manager/templates/nav.html:22
 msgid "Регистрация"
