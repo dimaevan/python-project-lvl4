@@ -12,3 +12,5 @@ requirements:
 	@poetry export -f requirements.txt --output requirements.txt
 translation:
 	django-admin makemessages -l en
+compile:
+	django-admin compilemessages

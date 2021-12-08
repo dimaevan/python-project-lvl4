@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-07 14:25+0300\n"
+"POT-Creation-Date: 2021-12-08 11:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,30 +18,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/main_page.html:16
+#: task_manager/templates/main_page.html:7
+msgid "Менеджер задач Hexlet"
+msgstr "Task manager Hexlet"
+
+#: task_manager/templates/main_page.html:22
+msgid "Привет от Хекслета!"
+msgstr "Hello from Hexlet"
+
+#: task_manager/templates/main_page.html:23
+msgid "Практические курсы по программированию"
+msgstr "Practical curses in programming"
+
+#: task_manager/templates/main_page.html:25
+msgid "Узнать больше"
+msgstr "Know more"
+
+#: task_manager/templates/nav.html:3
 msgid "Менеджер задач"
 msgstr "Task manager"
 
-#: templates/main_page.html:24
+#: task_manager/templates/nav.html:11
 msgid "Пользователи"
 msgstr "Users"
 
-#: templates/main_page.html:32
+#: task_manager/templates/nav.html:19
 msgid "Вход"
-msgstr "Login"
+msgstr "Users"
 
-#: templates/main_page.html:35
+#: task_manager/templates/nav.html:22
 msgid "Регистрация"
 msgstr "Registration"
-
-#: templates/main_page.html:49
-msgid "Привет от Хекслета!"
-msgstr "Hi from Hexlet"
-
-#: templates/main_page.html:50
-msgid "Практические курсы по программированию"
-msgstr "Practical curses  in Programming"
-
-#: templates/main_page.html:52
-msgid "Узнать больше"
-msgstr "Know more"
