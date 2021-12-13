@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% csrf_token %}
 <div class="container m-auto">
     <div class="row d-flex justify-content-center">
     <div class="col-md-6">
-    <form>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
         <h1 class="h3 mb-3 fw-normal">Login</h1>
 
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Nickname">
-            <label for="floatingInput">Nickname address</label>
+            <input type="text" class="form-control" id="Name" placeholder="Nickname">
+            <label for="Name">Nickname address</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control" id="Password" placeholder="Password">
+            <label for="Password">Password</label>
         </div>
         <!--
         <div class="checkbox mb-3">

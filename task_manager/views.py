@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.http import HttpResponse
+
 
 
 class MainView(TemplateView):
@@ -13,7 +15,11 @@ def users(requests):
 
 
 def login(requests):
-    return render(requests, 'login.html')
+    if requests.method == 'GET':
+        return render(requests, 'login.html')
+    else:
+        username = requests.POST['Name']
+        return HttpResponse(requests, username)
 
 
 def logout(requests):
