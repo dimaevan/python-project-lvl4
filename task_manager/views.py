@@ -17,16 +17,16 @@ def login(requests):
 
 
 def logout(requests):
-    pass
+    return render(requests, '')
 
 
 def registration(requests):
-    pass
+    return render(requests, 'registration.html')
 
 
 def delete_user(requests):
-    pass
+    return render(requests, '')
 
 
 def update_user(requests):
-    pass
+    return render(requests, '')
