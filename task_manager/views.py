@@ -1,38 +1,60 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.http import HttpResponse
-
+# from django.http import HttpResponse
+from django.contrib.auth import authenticate, login, logout
 
 
 class MainView(TemplateView):
     template_name = 'main_page.html'
 
 
-def users(requests):
+def users(request):
     all_users = User.objects.all()
-    return render(requests, 'users.html', context={'all_users': all_users})
+    return render(request, 'users.html', context={'all_users': all_users})
 
 
-def login(requests):
-    if requests.method == 'GET':
-        return render(requests, 'login.html')
+def login_view(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+
     else:
-        username = requests.POST['Name']
-        return HttpResponse(requests, username)
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+
+            login(request, user)
+            return redirect('main_page')
+        else:
+            return redirect('login')
 
 
-def logout(requests):
-    return render(requests, '')
+def logout_view(request):
+    logout(request)
+    return redirect('main_page')
 
 
-def registration(requests):
-    return render(requests, 'registration.html')
+def registration(request):
+    if request.method == 'GET':
+        return render(request, 'registration.html')
+    if request.method == 'POST':
+        name = request.POST['username']
+        surname = request.POST['surname']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+        nickname = request.POST['nickname']
+
+        if password == password2:
+            user = User.objects.create_user(username=nickname, email=None, password=password, first_name=name,
+                                            last_name=surname)
+            user.save()
+        return redirect('main_page')
 
 
-def delete_user(requests):
-    return render(requests, '')
+def delete_user(request):
+    return render(request, '')
 
 
-def update_user(requests):
-    return render(requests, '')
+def update_user(request):
+    return render(request, '')

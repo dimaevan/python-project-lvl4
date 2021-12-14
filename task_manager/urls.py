@@ -12,8 +12,8 @@ urlpatterns = [
     path('users/create', views.registration, name='registration'),
     path('users/<int:pk>/update/', views.update_user, name='update_user'),
     path('users/<int:pk>/delete/', views.delete_user, name='delete_user'),
-    path('login/', views.login, name='login'),
-    path('logout/', views.logout, name='logout'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
 ]
 
 dotenv.load_dotenv('local.env')
