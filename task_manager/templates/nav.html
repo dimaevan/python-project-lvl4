@@ -14,7 +14,7 @@
     <ul class="navbar-nav justify-content-end ms-auto">
         {% if user.is_authenticated %}
         <li class="nav-item ">
-            <a class="nav-link" aria-current="page" href="{% url 'login' %}">{{ user.username }}</a>
+            <a class="nav-link" aria-current="page" href="{% url 'update_user' user.pk %}">{{ user.username }}</a>
         </li>
         <li class="nav-item ">
             <a class="nav-link" aria-current="page" href="{% url 'logout' %}">{% translate 'Выход' %}</a>

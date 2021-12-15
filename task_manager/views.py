@@ -1,8 +1,9 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 # from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
+from .forms import UserForm
 
 
 class MainView(TemplateView):
@@ -23,7 +24,6 @@ def login_view(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
-
             login(request, user)
             return redirect('main_page')
         else:
@@ -56,5 +56,16 @@ def delete_user(request):
     return render(request, '')
 
 
-def update_user(request):
-    return render(request, '')
+def update_user(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance=user)
+        if form.is_valid():
+            user = form.save()
+            user.save()
+            return redirect('update_user', user_id=user.pk)
+    else:
+        form = UserForm(instance=user)
+
+    return render(request, 'user.html', {'form': form})

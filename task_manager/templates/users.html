@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="container wrapper flex-grow-1">
     <h1 class="my-4">Users</h1>
     <div class="card">
         <div class="card-body">
             <ul class="list-group">
                 {% for x in all_users %}
-                <li class="list-group-item">{{ x.username }}</li>
+                <a href="{% url 'update_user'  x.pk  %}" class="list-group-item list-group-item-action">
+                    {{ x.username }}
+                </a>
                 {% endfor %}
             </ul>
         </div>
