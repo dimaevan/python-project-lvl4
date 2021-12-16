@@ -10,9 +10,12 @@
                 {% bootstrap_form form %}
                 {% if log_user == this_user %}
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{% url 'delete_user' log_user %}" class="btn btn-danger">Delete account</a>
+
                 {% endif %}
             </form>
         </div>
+
     </div>
 </div>
 {% endblock %}

@@ -45,8 +45,13 @@ def registration(request):
         return render(request, 'registration.html', {'form': form})
 
 
-def delete_user(request):
-    return render(request, '')
+def delete_user(request, pk):
+    if request.method == 'POST':
+        u = User.objects.get(id=pk)
+        u.delete()
+        return redirect('main_page')
+
+    return render(request, 'delete_user.html')
 
 
 def update_user(request, user_id):
