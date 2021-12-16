@@ -5,10 +5,12 @@
 <div class="container m-auto">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6">
-            <form action="{% url 'update_user' user.pk %}" method="post">
+            <form action="{% url 'update_user' log_user %}" method="post">
                 {% csrf_token %}
                 {% bootstrap_form form %}
+                {% if log_user == this_user %}
                 <button type="submit" class="btn btn-primary">Submit</button>
+                {% endif %}
             </form>
         </div>
     </div>
