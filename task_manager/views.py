@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout, get_user
 from .forms import UserForm, RegistrationForm
-
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 class MainView(TemplateView):
     template_name = 'main_page.html'
@@ -26,6 +27,8 @@ def login_view(request):
             login(request, user)
             return redirect('main_page')
         else:
+            text = 'User don`t found'
+            messages.add_message(request, messages.INFO, text)
             return redirect('login')
 
 
@@ -54,16 +57,17 @@ def delete_user(request, pk):
     return render(request, 'delete_user.html')
 
 
-def update_user(request, user_id):
-    this_user = get_object_or_404(User, pk=user_id)
+@login_required
+def update_user(request, pk):
+    this_user = get_object_or_404(User, pk=pk)
     login_user = get_user(request).pk
     if request.method == 'POST':
         form = UserForm(request.POST, instance=request.user)
         if form.is_valid() and this_user.pk == login_user:
             user = form.save()
             user.save()
-            return redirect('update_user', user_id=request.user.pk)
+            return redirect('update_user', pk=request.user.pk)
     else:
         form = UserForm(instance=this_user)
 
-    return render(request, 'user.html', {'form': form, 'log_user': login_user, 'this_user': this_user.pk})
+    return render(request, 'user.html', {'form': form, 'pk': this_user.pk})

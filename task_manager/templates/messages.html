@@ -1,0 +1,11 @@
+{% if messages %}
+    {% for message in messages %}
+        {% if message.level == 'INFO' %}
+            <div class="alert alert-success" role="alert">
+        {% else %}
+            <div class="alert alert-danger" role="alert">
+        {% endif %}
+                {{message}}
+            </div>
+    {% endfor %}
+{% endif %}

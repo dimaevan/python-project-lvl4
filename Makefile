@@ -16,3 +16,5 @@ translation:
 	django-admin makemessages -l en
 compile:
 	django-admin compilemessages
+test:
+	@poetry run pytest tests/ -vv
