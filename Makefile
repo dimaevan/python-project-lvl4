@@ -17,4 +17,4 @@ translation:
 compile:
 	django-admin compilemessages
 test:
-	@poetry run pytest tests/ -vv
+	@poetry run pytest tests/ -svv

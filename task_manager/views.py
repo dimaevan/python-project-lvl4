@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout, get_user
 from .forms import UserForm, RegistrationForm
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+
 
 class MainView(TemplateView):
     template_name = 'main_page.html'
@@ -18,7 +18,6 @@ def users(request):
 def login_view(request):
     if request.method == 'GET':
         return render(request, 'login.html')
-
     else:
         username = request.POST['username']
         password = request.POST['password']
@@ -57,7 +56,6 @@ def delete_user(request, pk):
     return render(request, 'delete_user.html')
 
 
-@login_required
 def update_user(request, pk):
     this_user = get_object_or_404(User, pk=pk)
     login_user = get_user(request).pk
