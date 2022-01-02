@@ -1,50 +1,31 @@
-from django.views.generic import TemplateView
-from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import TemplateView, UpdateView, DetailView
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout, get_user
-from .forms import UserForm, RegistrationForm
-from django.contrib import messages
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from django.views.generic.list import ListView
+from django.contrib.auth import get_user
+from .forms import UserForm
+from django.views import View
 
 
 class MainView(TemplateView):
     template_name = 'main_page.html'
 
 
-def users(request):
-    all_users = User.objects.all()
-    return render(request, 'users.html', context={'all_users': all_users})
+class UsersDetailView(ListView):
+    model = User
+    template_name = 'users.html'
 
 
-def login_view(request):
-    if request.method == 'GET':
-        return render(request, 'login.html')
-    else:
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('main_page')
-        else:
-            text = 'User don`t found'
-            messages.add_message(request, messages.INFO, text)
-            return redirect('login')
-
-
-def logout_view(request):
-    logout(request)
-    return redirect('main_page')
-
-
-def registration(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+class RegisterView(View):
+    def post(self, request):
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main_page')
-    else:
-        form = RegistrationForm()
-        return render(request, 'registration.html', {'form': form})
+            return redirect(reverse('login'))
+
+    def get(self, request):
+        return render(request, 'registration.html', {'form': UserCreationForm})
 
 
 def delete_user(request, pk):
@@ -64,7 +45,7 @@ def update_user(request, pk):
         if form.is_valid() and this_user.pk == login_user:
             user = form.save()
             user.save()
-            return redirect('update_user', pk=request.user.pk)
+            return redirect('users')
     else:
         form = UserForm(instance=this_user)
 
