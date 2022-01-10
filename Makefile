@@ -18,3 +18,9 @@ compile:
 	django-admin compilemessages
 test:
 	@poetry run pytest tests/ -svv
+testt:
+	@poetry run pytest tests/test_tasks.py -svv
+m:
+	@python manage.py migrate
+mm:
+	@python manage.py makemigrations

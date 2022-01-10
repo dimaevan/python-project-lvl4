@@ -1,7 +1,7 @@
-from django.views.generic import TemplateView, UpdateView, DetailView
+from django.views.generic import TemplateView
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.list import ListView
 from django.contrib.auth import get_user
 from .forms import UserForm

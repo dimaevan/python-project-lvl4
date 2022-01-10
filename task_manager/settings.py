@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'statuses.apps.StatusesConfig',
+    'tasks.apps.TasksConfig',
     'task_manager',
     'bootstrap5',
     'django_extensions'
@@ -75,10 +76,7 @@ TEMPLATES = [
     },
 ]
 
-
-
 WSGI_APPLICATION = 'task_manager.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

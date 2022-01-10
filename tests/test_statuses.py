@@ -1,9 +1,20 @@
 from django.test import TestCase
 from django.urls import reverse
 from statuses.models import Status
+from django.contrib.auth.models import User
+
+
+class TestStatusesViewNoUser(TestCase):
+    def test_login_need(self):
+        response = self.client.get(reverse('statuses'))
+        self.assertEqual(response.status_code, 302)
 
 
 class TestStatusesView(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+        self.client.login(username='john', password='johnpassword')
 
     def test_all_statuses(self):
         Status.objects.create(status='New status')
@@ -28,6 +39,7 @@ class TestStatusesView(TestCase):
         self.assertEqual(status.pk, 1)
         response = self.client.get(reverse('update_status', args=[status.pk]))
         self.assertTemplateUsed(response, 'statuses/statuses_update.html')
+
         response = self.client.post(reverse('update_status', args=[status.pk, ]), {'status': 'New test'})
         self.assertEqual(response.status_code, 302)
         status = Status.objects.filter(pk=status.pk)[0]

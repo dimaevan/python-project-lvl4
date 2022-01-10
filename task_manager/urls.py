@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.MainView.as_view(), name='main_page'),
     path('statuses/', include('statuses.urls')),
+    path('tasks/', include('tasks.urls')),
 
     path('users/', views.UsersDetailView.as_view(), name='users'),
     path('users/<int:pk>/update/', views.update_user, name='update_user'),
