@@ -10,9 +10,10 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 {% include 'nav.html' %}
-{% include 'messages.html' %}
+
 <div class="container mb-auto">
     <div class="row ">
+        {% include 'messages.html' %}
         {% block content %}
         {% endblock %}
     </div>

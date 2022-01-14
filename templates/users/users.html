@@ -3,21 +3,37 @@
 {% block content %}
 <div>
     <h2 class="mt-2">{% translate 'Users' %}</h2>
-    <ul class="list-group">
-        {% for x in object_list %}
-        <li class="list-group-item list-group-item-action">
-            <div class="d-flex">
-                <div class="me-auto my-auto">{{ x.username }}</div>
-                <div class="ml-auto my-1 mr-1">
-                    <a type="button" class="btn btn-sm btn-primary ms-auto "
-                       href="{% url 'update_user' x.pk %}"
+
+    {% if object_list %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="row">Id</th>
+            <th>{% translate 'Username' %}</th>
+            <th>{% translate 'Fullname' %}</th>
+            <th>{% translate 'Data joined' %}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in object_list %}
+        <tr>
+                <th scope="row">{{ user.pk }}</th>
+                <th >{{ user.username }}</th>
+                <th >{{ user.get_full_name }}</th>
+                <th >{{ user.date_joined }}</th>
+                <th>
+                    <a type="button" class="btn btn-sm btn-primary "
+                       href="{% url 'update_user' user.pk %}"
                        role="button">{% translate 'Edit' %}</a>
-                    <a type="button" class="btn btn-sm btn-danger ms-auto" href="{% url 'delete_user' x.pk %}"
+                    <a type="button" class="btn btn-sm btn-danger " href="{% url 'delete_user' user.pk %}"
                        role="button">{% translate 'Delete' %}</a>
-                </div>
-            </div>
-        </li>
+                </th>
+        </tr>
         {% endfor %}
-    </ul>
+        </tbody>
+    </table>
+    {% endif %}
+
 </div>
 {% endblock %}

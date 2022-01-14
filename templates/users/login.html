@@ -1,28 +1,29 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
-<div class="container m-auto">
-    <div class="row d-flex justify-content-center">
-<div class="col-md-6">
-    {% include 'messages.html' %}
+
+<div class="mt-5">
     <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
-        <h1 class="h3 mb-3 fw-normal">{% translate 'Login' %}</h1>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="Name" placeholder="Nickname" name="username">
+        <h1 class="h2 mb-3 fw-normal">{% translate 'Login' %}</h1>
+
+        <div class="form-group mb-3">
             <label for="Name">{% translate 'Nickname' %}</label>
+            <input type="text" class="form-control mt-2" id="Name"
+                   placeholder="{% translate 'Nickname' %}" name="username" id="id_username">
+
         </div>
 
-        <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="Password" placeholder="Password" name="password">
+        <div class="form-group  mb-3">
             <label for="Password">{% translate 'Password' %}</label>
+            <input type="password" class="form-control mt-2" id="Password"
+                   placeholder="{% translate 'Password' %}" name="password" id="id_password">
         </div>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">{% translate 'Sign in' %}</button>
+        <button class="btn btn-primary" type="submit">{% translate 'Sign in' %}</button>
 
     </form>
-</div>
-</div>
+
 </div>
 
 {% endblock %}
