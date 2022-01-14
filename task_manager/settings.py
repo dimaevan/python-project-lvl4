@@ -40,11 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'statuses.apps.StatusesConfig',
     'tasks.apps.TasksConfig',
+    'labels.apps.LabelsConfig',
     'task_manager',
+
     'bootstrap5',
-    'django_extensions'
+    'django_extensions',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +140,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]

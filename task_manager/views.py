@@ -1,52 +1,53 @@
-from django.views.generic import TemplateView
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.views.generic import ListView, UpdateView, DeleteView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.list import ListView
-from django.contrib.auth import get_user
-from .forms import UserForm
-from django.views import View
-
-
-class MainView(TemplateView):
-    template_name = 'main_page.html'
+from django.urls import reverse_lazy
+from django.shortcuts import redirect
+from django.contrib import messages
+from django.utils.translation import gettext as _
 
 
 class UsersDetailView(ListView):
     model = User
-    template_name = 'users.html'
+    template_name = 'users/users.html'
+    ordering = ['username']
 
 
-class RegisterView(View):
-    def post(self, request):
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse('login'))
-
-    def get(self, request):
-        return render(request, 'registration.html', {'form': UserCreationForm})
+class UserSignUpView(CreateView):
+    form_class = UserCreationForm
+    template_name = 'users/registration.html'
+    success_url = reverse_lazy('login')
 
 
-def delete_user(request, pk):
-    if request.method == 'POST':
-        u = User.objects.get(id=pk)
-        u.delete()
-        return redirect('main_page')
+class UserUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    model = User
+    template_name = 'users/user.html'
+    fields = ['username', 'first_name', 'last_name']
+    success_url = reverse_lazy('users')
+    login_url = reverse_lazy('login')
 
-    return render(request, 'delete_user.html')
+    def test_func(self):
+        obj = self.get_object()
+        return obj.username == self.request.user.username
+
+    def handle_no_permission(self):
+        text = _('You have not permission to edit this user.')
+        messages.add_message(self.request, messages.WARNING, text)
+        return redirect('users')
 
 
-def update_user(request, pk):
-    this_user = get_object_or_404(User, pk=pk)
-    login_user = get_user(request).pk
-    if request.method == 'POST':
-        form = UserForm(request.POST, instance=request.user)
-        if form.is_valid() and this_user.pk == login_user:
-            user = form.save()
-            user.save()
-            return redirect('users')
-    else:
-        form = UserForm(instance=this_user)
+class UserDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = User
+    template_name = 'users/delete_user.html'
+    success_url = reverse_lazy('users')
+    login_url = reverse_lazy('login')
 
-    return render(request, 'user.html', {'form': form, 'pk': this_user.pk})
+    def test_func(self):
+        obj = self.get_object()
+        return obj.username == self.request.user.username
+
+    def handle_no_permission(self):
+        text = _('You have not permission to delete this account')
+        messages.add_message(self.request, messages.WARNING, text)
+        return redirect('users')

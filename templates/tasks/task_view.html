@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+{% load bootstrap5 %}
+<div>
+    <h1>{% translate 'Task view' %}</h1>
+    <div class="card" style="width: 100%; ">
+        <div class="card-body">
+            <h5 class="card-title">{{task.name}}</h5>
+            <p class="card-text">{{task.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{% translate 'Author'%} : {{task.author}}</li>
+            <li class="list-group-item">{% translate 'Worker' %} : {{task.workers}}</li>
+            <li class="list-group-item">{% translate 'Status' %} : {{task.status}}</li>
+            <li class="list-group-item">{% translate 'Date creation' %} : {{task.created|date:"D d M Y"}}</li>
+
+            {% if task.label.all %}
+            <li class="list-group-item">
+                {% translate 'Labels' %}:
+                {% for label in task.label.all %}
+                <a href="#">{{ label }}</a>
+                {% endfor %}
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    <a href="{% url 'tasks' %}" class="btn btn-primary mt-2">{% translate 'All tasks' %}</a>
+</div>
+{% endblock %}
