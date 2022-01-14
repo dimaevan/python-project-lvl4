@@ -3,15 +3,16 @@
 {% block content %}
 {% load bootstrap5 %}
 
-<div class="container m-auto">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-            <form action="" method="post">
-                {% csrf_token %}
-                {% bootstrap_form form %}
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
+<div>
+    <h2 class="mt-2">{% translate 'Update task' %} "{{object}}"</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>{% bootstrap_field form.name %}</div>
+        <div>{% bootstrap_field form.description %}</div>
+        <div>{% bootstrap_field form.workers %}</div>
+        <div>{% bootstrap_field form.status %}</div>
+        <div>{% bootstrap_field form.label field_class=multiple %}</div>
+        <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
+    </form>
 </div>
 {% endblock %}

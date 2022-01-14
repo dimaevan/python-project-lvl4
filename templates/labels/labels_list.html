@@ -3,24 +3,25 @@
 {% block content %}
 
 <div>
-    <h2 class="mt-2">{% translate 'Statuses:' %}</h2>
-    <a href="{% url 'create_status' %}" class="btn btn-primary mt-2" role="button">{% translate 'Create new status' %}</a>
+    <h2 class="mt-2">{% translate 'Labels' %}:</h2>
+    <a href="{% url 'create_label' %}" class="btn btn-primary mt-2" role="button" >{% translate 'Create new label' %}</a>
 
     <ul class="list-group mt-2">
-        {% for x in object_list %}
+        {% for label in object_list %}
         <li class="list-group-item list-group-item-action">
             <div class="d-flex">
-                <div class="me-auto my-auto">{{ x.status }}</div>
+                <div class="me-auto my-auto">{{ label.name }}</div>
                 <div class="ml-auto my-1 mr-1">
                     <a type="button" class="btn btn-sm btn-primary ms-auto "
-                       href="{% url 'update_status' x.pk %}"
+                       href="{% url 'update_label' label.pk %}"
                        role="button">{% translate 'Edit' %}</a>
-                    <a type="button" class="btn btn-sm btn-danger ms-auto" href="{% url 'delete_status' x.pk %}"
+                    <a type="button" class="btn btn-sm btn-danger ms-auto" href="{% url 'delete_label' label.pk %}"
                        role="button">{% translate 'Delete' %}</a>
                 </div>
             </div>
         </li>
         {% endfor %}
     </ul>
+
 </div>
 {% endblock %}

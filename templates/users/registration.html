@@ -3,11 +3,11 @@
 {% block content %}
     {% load bootstrap5 %}
     <div class="container col-6 mt-3">
-        <h1>Регистрация</h1>
+        <h1>{% translate 'Registration' %}</h1>
         <form method="post" action="{% url 'registration' %}">
             {% csrf_token %}
             {% bootstrap_form form %}
-            <button type="submit" class="btn btn-success">Зарегистрировать</button>
+            <button type="submit" class="btn btn-success">{% translate 'SignUp' %}</button>
         </form>
     </div>
 {% endblock %}

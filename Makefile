@@ -9,7 +9,7 @@ run:
 rung:
 	@poetry run gunicorn -w 4 task_manager.wsgi
 lint:
-	@poetry run flake8 task_manager/
+	@poetry run flake8 task_manager/ labels/ statuses/ tasks/ templates/ tests/
 requirements:
 	@poetry export -f requirements.txt --output requirements.txt
 translation:
@@ -19,8 +19,16 @@ compile:
 test:
 	@poetry run pytest tests/ -svv
 testt:
-	@poetry run pytest tests/test_tasks.py -svv
+	@poetry run pytest tests/test_users.py -svv
+
 m:
 	@python manage.py migrate
 mm:
 	@python manage.py makemigrations
+su:
+	@python manage.py createsuperuser
+
+gt:
+	@python manage.py makemessages -a
+tr:
+	@python manage.py compilemessages

@@ -1,0 +1,259 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-13 17:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: labels/models.py:6 tasks/models.py:15
+#, fuzzy
+#| msgid "Labels"
+msgid "Label"
+msgstr "Метки"
+
+#: statuses/models.py:6 tasks/models.py:14 templates/tasks/task_view.html:15
+msgid "Status"
+msgstr "Статус"
+
+#: task_manager/views.py:35
+msgid "You have not permission to edit this user."
+msgstr "У вас нет прав для изменения другого пользователя."
+
+#: task_manager/views.py:51
+#, fuzzy
+#| msgid "I want to delete my account!"
+msgid "You have not permission to delete this account"
+msgstr "У вас нет прав для изменения другого пользователя."
+
+#: tasks/filter.py:8
+msgid "Only your tasks"
+msgstr "Только свои задачи"
+
+#: tasks/models.py:9
+#, fuzzy
+#| msgid "Update task"
+msgid "Name of task"
+msgstr "Изменить задачу"
+
+#: tasks/models.py:10
+#, fuzzy
+#| msgid "Date creation"
+msgid "Description"
+msgstr "Дата создания"
+
+#: tasks/models.py:11 templates/tasks/task_view.html:14
+msgid "Worker"
+msgstr "Исполнитель"
+
+#: tasks/models.py:13 templates/tasks/task_view.html:13
+msgid "Author"
+msgstr "Автор"
+
+#: tasks/models.py:19
+#, fuzzy
+#| msgid "Tasks"
+msgid "Task"
+msgstr "Задачи"
+
+#: tasks/views.py:42
+msgid "You have not permission to delete this task"
+msgstr "Задачу может удалить только её автор"
+
+#: templates/base.html:7
+msgid "Hexlet Task Manager"
+msgstr "Менеджер задач Хекслета"
+
+#: templates/labels/label_add.html:7
+msgid "Add label"
+msgstr "Добавить метку"
+
+#: templates/labels/label_add.html:11 templates/statuses/statuses_add.html:11
+#: templates/tasks/task_add.html:11 templates/tasks/task_update.html:15
+#: templates/users/user.html:10
+msgid "Submit"
+msgstr "Подтвердить"
+
+#: templates/labels/label_delete.html:7
+msgid "Do you really want to delete label"
+msgstr "Вы точно хотите удалить метку"
+
+#: templates/labels/label_delete.html:10 templates/labels/labels_list.html:19
+#: templates/statuses/status_delete.html:10
+#: templates/statuses/statuses_list.html:19 templates/tasks/task_delete.html:10
+#: templates/tasks/task_filter.html:33 templates/tasks/tasks_list.html:29
+#: templates/users/users.html:16
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/labels/label_update.html:7
+msgid "Update status"
+msgstr "Изменить статус"
+
+#: templates/labels/label_update.html:11
+#: templates/statuses/statuses_update.html:11
+msgid "Update"
+msgstr "Изменить"
+
+#: templates/labels/labels_list.html:6 templates/nav.html:19
+#: templates/tasks/task_view.html:20
+msgid "Labels"
+msgstr "Метки"
+
+#: templates/labels/labels_list.html:7
+msgid "Create new label"
+msgstr "Создать новую метку"
+
+#: templates/labels/labels_list.html:17
+#: templates/statuses/statuses_list.html:17 templates/tasks/task_filter.html:31
+#: templates/tasks/tasks_list.html:27 templates/users/users.html:14
+msgid "Edit"
+msgstr "Изменить"
+
+#: templates/main_page.html:9
+msgid "Hello from Hexlet"
+msgstr "Привет от ХЕкслета"
+
+#: templates/main_page.html:10
+msgid "Practical programming courses"
+msgstr "Практические курсы программирования"
+
+#: templates/main_page.html:12
+msgid "Know more"
+msgstr "Подробнее"
+
+#: templates/nav.html:7
+msgid "Task manager"
+msgstr "Менеджер задач"
+
+#: templates/nav.html:10 templates/users/users.html:5
+msgid "Users"
+msgstr "Пользователи"
+
+#: templates/nav.html:13
+msgid "Statuses"
+msgstr "Статусы"
+
+#: templates/nav.html:16 templates/tasks/tasks_list.html:6
+msgid "Tasks"
+msgstr "Задачи"
+
+#: templates/nav.html:29
+msgid "Logout"
+msgstr "Выход"
+
+#: templates/nav.html:33 templates/users/login.html:10
+msgid "Login"
+msgstr "Вход"
+
+#: templates/nav.html:36 templates/users/registration.html:10
+msgid "SignUp"
+msgstr "Регистрация"
+
+#: templates/statuses/status_delete.html:7
+msgid "Do you really want to delete status"
+msgstr "Вы точно хотите удалить статус"
+
+#: templates/statuses/statuses_add.html:7
+msgid "Add status"
+msgstr "Добавить задачу"
+
+#: templates/statuses/statuses_list.html:6
+msgid "Statuses:"
+msgstr "Статусы"
+
+#: templates/statuses/statuses_list.html:7
+msgid "Create new status"
+msgstr "Создать новую задачу"
+
+#: templates/tasks/task_add.html:7
+msgid "Add task"
+msgstr "Добавить задачу"
+
+#: templates/tasks/task_delete.html:7
+msgid "Do you really want to delete task"
+msgstr "Вы точно хотите удалить задачу"
+
+#: templates/tasks/task_filter.html:7
+msgid "Create new task"
+msgstr "Создать новую задачу"
+
+#: templates/tasks/task_filter.html:16
+msgid "Filter"
+msgstr "Фильтр"
+
+#: templates/tasks/task_filter.html:17
+msgid "Reset"
+msgstr "Сброс"
+
+#: templates/tasks/task_filter.html:28 templates/tasks/tasks_list.html:24
+msgid "View"
+msgstr "Просмотр"
+
+#: templates/tasks/task_update.html:7
+msgid "Update task"
+msgstr "Изменить задачу"
+
+#: templates/tasks/task_view.html:6
+msgid "Task view"
+msgstr "Просмотр задачи"
+
+#: templates/tasks/task_view.html:16
+msgid "Date creation"
+msgstr "Дата создания"
+
+#: templates/tasks/task_view.html:28
+msgid "All tasks"
+msgstr "Все задачи"
+
+#: templates/users/delete_user.html:6
+msgid "Delete user"
+msgstr "Удалить пользователя"
+
+#: templates/users/delete_user.html:7
+msgid "Are you sure you want to delete"
+msgstr "Вы точно хотите удалить"
+
+#: templates/users/delete_user.html:10
+msgid "I want to delete my account!"
+msgstr "Я хочу удалить свой аккаунт"
+
+#: templates/users/login.html:13
+msgid "Nickname"
+msgstr "Никнейм"
+
+#: templates/users/login.html:18
+msgid "Password"
+msgstr "Пароль"
+
+#: templates/users/login.html:21
+msgid "Sign in"
+msgstr "Вход"
+
+#: templates/users/registration.html:6
+msgid "Registration"
+msgstr "Регистрация"
+
+#: templates/users/user.html:6
+msgid "Update user"
+msgstr "Обновить пользователя"
+
+#~ msgid "Labels:"
+#~ msgstr "Метки"
+
+#~ msgid "Tasks:"
+#~ msgstr "Задачи:"

@@ -53,4 +53,3 @@ class TestStatusesView(TestCase):
         self.assertEqual(response.status_code, 302)
         count = int(Status.objects.count())
         self.assertEqual(count, 0)
-

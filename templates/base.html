@@ -4,18 +4,19 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Менеджер задач Hexlet</title>
+    <title>{% translate 'Hexlet Task Manager' %}</title>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
 <body class="d-flex flex-column min-vh-100">
 {% include 'nav.html' %}
-    <div class="container mb-auto">
-        <div class="row d-flex ">
-            {% block content %}
-            {% endblock %}
-        </div>
+{% include 'messages.html' %}
+<div class="container mb-auto">
+    <div class="row ">
+        {% block content %}
+        {% endblock %}
     </div>
+</div>
 {% include 'footer.html' %}
 </body>
 </html>

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+{% load bootstrap5 %}
+<div>
+<h2 class="mt-2">Tasks:</h2>
+    <a href="{% url 'add_task' %}" class="btn btn-primary mt-2" role="button">{% translate 'Create new task' %}</a>
+<div class="p-3 mb-2 mt-2 bg-secondary bg-opacity-10 border rounded">
+<form method="get">
+    {% bootstrap_field filter.form.name layout='horizontal' %}
+    {% bootstrap_field filter.form.status layout='horizontal' %}
+    {% bootstrap_field filter.form.workers layout='horizontal' %}
+    {% bootstrap_field filter.form.label layout='horizontal' %}
+    {% bootstrap_field filter.form.check_box layout='horizontal' %}
+
+    <button type="submit" class="btn btn-primary">{% translate 'Filter' %}</button>
+    <a class="btn btn-secondary" href="{% url 'tasks' %}" type="reset" role="button">{% translate 'Reset' %}</a>
+</form>
+</div>
+
+<ul class="list-group mt-3">
+    {% for task in filter.qs %}
+    <li class="list-group-item list-group-item-action">
+        <div class="d-flex">
+            <div class="me-auto my-auto">{{ task.name }}</div>
+            <div class="ml-auto my-1 mr-1">
+                <a type="button" class="btn btn-sm btn-secondary ms-auto" href="{% url 'view_task' task.pk %}"
+                   role="button">{% translate 'View' %}</a>
+                <a type="button" class="btn btn-sm btn-primary ms-auto "
+                   href="{% url 'update_task' task.pk %}"
+                   role="button">{% translate 'Edit' %}</a>
+                <a type="button" class="btn btn-sm btn-danger ms-auto" href="{% url 'delete_task' task.pk %}"
+                   role="button">{% translate 'Delete' %}</a>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

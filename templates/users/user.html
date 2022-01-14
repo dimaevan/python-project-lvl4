@@ -2,13 +2,13 @@
 {% load i18n %}
 {% block content %}
 {% load bootstrap5 %}
-
 <div>
-    <h2 class="mt-2">{% translate 'Add status' %}</h2>
+    <h2 class="mt-2">{% translate 'Update user' %}</h2>
     <form action="" method="post">
         {% csrf_token %}
-        {% bootstrap_field form.status layout='horizontal' %}
+        {% bootstrap_form form %}
         <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
+
     </form>
 </div>
 {% endblock %}
