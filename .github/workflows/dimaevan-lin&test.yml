@@ -22,9 +22,18 @@ jobs:
       - name: Run linter
         run: |
           make lint
+
+      - name: Init env
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          SECRET: ${{ secrets.SECRET }}
+          DEBUG: True
+          ALLOWED_HOSTS: "['*']"
+
       - name: Run tests
         run: |
           make test-cov
+          
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
