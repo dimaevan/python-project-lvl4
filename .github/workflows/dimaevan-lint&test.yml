@@ -1,4 +1,4 @@
-name: test&lint
+name: lint&test
 
 on: push
 
@@ -69,7 +69,3 @@ jobs:
           SECRET: ${{ secrets.SECRET }}
           DEBUG: True
           ALLOWED_HOSTS: "['*']"
-#        with:
-#          coverageCommand: make test-cov
-#          debug: true
-#

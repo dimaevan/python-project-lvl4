@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-15 05:36+0000\n"
+"POT-Creation-Date: 2022-01-15 12:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,18 @@ msgstr ""
 #| msgid "Labels"
 msgid "Label"
 msgstr "Метки"
+
+#: labels/models.py:7 statuses/models.py:7 templates/labels/labels_list.html:16
+#: templates/statuses/statuses_list.html:15
+#, fuzzy
+#| msgid "Date creation"
+msgid "Data creation"
+msgstr "Дата создания"
+
+#: statuses/models.py:6 templates/labels/labels_list.html:15
+#: templates/statuses/statuses_list.html:14
+msgid "Name"
+msgstr "Имя"
 
 #: tasks/filter.py:8
 msgid "Only your tasks"
@@ -60,8 +72,10 @@ msgstr "Статус"
 msgid "Task"
 msgstr "Задачи"
 
-#: tasks/views.py:45
-msgid "You have not permission to delete this task"
+#: tasks/views.py:29
+#, fuzzy
+#| msgid "You have not permission to delete this task"
+msgid "You have not permission to delete task"
 msgstr "Задачу может удалить только её автор"
 
 #: templates/base.html:7
@@ -82,9 +96,9 @@ msgstr "Подтвердить"
 msgid "Do you really want to delete label"
 msgstr "Вы точно хотите удалить метку"
 
-#: templates/labels/label_delete.html:10 templates/labels/labels_list.html:19
+#: templates/labels/label_delete.html:10 templates/labels/labels_list.html:32
 #: templates/statuses/status_delete.html:10
-#: templates/statuses/statuses_list.html:19 templates/tasks/task_delete.html:10
+#: templates/statuses/statuses_list.html:32 templates/tasks/task_delete.html:10
 #: templates/tasks/task_filter.html:33 templates/users/users.html:30
 msgid "Delete"
 msgstr "Удалить"
@@ -107,8 +121,8 @@ msgstr "Метки"
 msgid "Create new label"
 msgstr "Создать новую метку"
 
-#: templates/labels/labels_list.html:17
-#: templates/statuses/statuses_list.html:17 templates/tasks/task_filter.html:31
+#: templates/labels/labels_list.html:30
+#: templates/statuses/statuses_list.html:30 templates/tasks/task_filter.html:31
 #: templates/users/users.html:28
 msgid "Edit"
 msgstr "Изменить"

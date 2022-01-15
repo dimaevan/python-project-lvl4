@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from django import forms
 
 
@@ -12,8 +12,8 @@ class UserUpdateForm(UserCreationForm):
     last_name = forms.CharField(max_length=100, label=_('Last name'), required=False)
     password1 = forms.CharField(max_length=100, label=_('Password'))
     password2 = forms.CharField(max_length=100,
-                                label='Password confirm', help_text=_('Please enter your password again '
-                                                                      'to confirm.'))
+                                label=_('Password confirm'), help_text=_('Please enter your password again '
+                                                                         'to confirm.'))
 
     class Meta:
         model = User

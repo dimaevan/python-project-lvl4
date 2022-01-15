@@ -6,3 +6,5 @@ __pycache__
 fake.py
 migrations/
 users.txt
+.coverage
+coverage.xml
