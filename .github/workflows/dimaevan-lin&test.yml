@@ -57,6 +57,7 @@ jobs:
           DEBUG: True
           ALLOWED_HOSTS: "['*']"
         run: |
+          source .venv/bin/activate
           make mm
           make m
           make test-cov
