@@ -33,7 +33,7 @@ jobs:
       - name: Run tests
         run: |
           make test-cov
-          
+
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
