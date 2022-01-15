@@ -16,10 +16,13 @@ translation:
 	django-admin makemessages -l en
 compile:
 	django-admin compilemessages
+
 test:
 	@poetry run pytest tests/ -svv
 testt:
 	@poetry run pytest tests/test_users.py -svv
+test-cov:
+	@poetry run pytest --cov=. --cov-report xml
 
 m:
 	@python manage.py migrate
