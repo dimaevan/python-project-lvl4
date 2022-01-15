@@ -43,8 +43,8 @@ jobs:
       #----------------------------------------------
       - name: Install library
         run: |
-        poetry env use python3.8
-        poetry install --no-interaction
+          poetry env use python3.8
+          poetry install --no-interaction
 
       - name: Run linter
         run: |
