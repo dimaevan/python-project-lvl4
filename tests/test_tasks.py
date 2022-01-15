@@ -56,7 +56,6 @@ class TestTasks(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'New')
         self.assertTemplateUsed(response, 'tasks/task_update.html')
-        print(task1.name)
         response = self.client.post(reverse('update_task', args=[1]),
                                     {'name': 'NewNew', 'description': 'Just new task',
                                      'workers': self.worker.id, 'status': self.status.id, }
