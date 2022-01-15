@@ -24,7 +24,7 @@ jobs:
           make lint
       - name: Run tests
         run: |
-          make tests
+          make test-cov
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
@@ -32,7 +32,7 @@ jobs:
           SECRET: ${{ secrets.SECRET }}
           DEBUG: True
           ALLOWED_HOSTS: "['*']"
-        with:
-          coverageCommand: make test-cov
-          debug: true
-      
+#        with:
+#          coverageCommand: make test-cov
+#          debug: true
+#

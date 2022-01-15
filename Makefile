@@ -22,7 +22,7 @@ test:
 testt:
 	@poetry run pytest tests/test_users.py -svv
 test-cov:
-	@poetry run pytest --cov=. --cov-report xml
+	@poetry run pytest --cov=.
 
 m:
 	@python manage.py migrate
