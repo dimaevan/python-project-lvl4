@@ -18,7 +18,8 @@ class TestUsers(TestCase):
         self.assertEqual(response.status_code, 302)
 
         response = self.client.post(reverse('update_user', args=[user1.pk]), {
-            'username': 'username1', 'first_name': 'User1', 'last_name': ''
+            'username': 'username1', 'first_name': 'User1', 'last_name': 'Last',
+            'password1': user1.password, 'password2': user1.password
         })
         # form = response.context['form']
         # print(form.errors)

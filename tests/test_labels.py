@@ -1,9 +1,13 @@
 from django.test import TestCase
 from django.urls import reverse
 from labels.models import Label
+from django.contrib.auth.models import User
 
 
 class TestLabels(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+        self.client.login(username='john', password='johnpassword')
 
     def test_all_labels(self):
         label = Label.objects.create(name='This is Label')
