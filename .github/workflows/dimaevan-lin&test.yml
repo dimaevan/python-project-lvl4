@@ -23,14 +23,12 @@ jobs:
         run: |
           make lint
 
-      - name: Init env
+      - name: Run tests
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           SECRET: ${{ secrets.SECRET }}
           DEBUG: True
           ALLOWED_HOSTS: "['*']"
-
-      - name: Run tests
         run: |
           make test-cov
 
