@@ -30,6 +30,8 @@ jobs:
           DEBUG: True
           ALLOWED_HOSTS: "['*']"
         run: |
+          make mm
+          make m
           make test-cov
 
       - name: Test & publish code coverage
