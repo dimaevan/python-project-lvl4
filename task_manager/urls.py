@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib.auth import views as auth_view
 from django.urls import path, include
 from task_manager import views
 import dotenv

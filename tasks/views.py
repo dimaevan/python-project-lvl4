@@ -6,13 +6,15 @@ from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from . forms import TaskForm
 
 
 class TaskCreateView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
     model = models.Task
     template_name = 'tasks/task_add.html'
-    fields = ['name', 'description', 'workers', 'status', 'label']
+    form_class = TaskForm
+    # fields = ['name', 'description', 'workers', 'status', 'label']
     success_url = reverse_lazy('tasks')
 
     def form_valid(self, form):
@@ -24,7 +26,8 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
     model = models.Task
     template_name = 'tasks/task_update.html'
-    fields = ['name', 'description', 'workers', 'status', 'label']
+    form_class = TaskForm
+    # fields = ['name', 'description', 'workers', 'status', 'label']
     success_url = reverse_lazy('tasks')
 
 

@@ -10,6 +10,7 @@ from django.utils.translation import gettext as _
 from django.contrib.auth import login
 from .forms import UserUpdateForm
 
+
 class UsersDetailView(ListView):
     model = User
     template_name = 'users/users.html'
@@ -26,7 +27,7 @@ class UserUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     model = User
     template_name = 'users/user.html'
     form_class = UserUpdateForm
-    # fields = ['username', 'first_name', 'last_name', ]
+
     success_url = reverse_lazy('users')
     login_url = reverse_lazy('login')
 
@@ -38,7 +39,6 @@ class UserUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
         text = _('You have not permission to edit this user.')
         messages.add_message(self.request, messages.WARNING, text)
         return redirect('users')
-
 
 
 class UserDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
