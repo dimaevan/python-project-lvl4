@@ -6,22 +6,35 @@
     <h2 class="mt-2">{% translate 'Labels' %}:</h2>
     <a href="{% url 'create_label' %}" class="btn btn-primary mt-2" role="button" >{% translate 'Create new label' %}</a>
 
-    <ul class="list-group mt-2">
+    {% if object_list %}
+
+    <table class="table mt-1">
+        <thead>
+        <tr>
+            <th scope="row">Id</th>
+            <th>{% translate 'Name' %}</th>
+            <th>{% translate 'Data creation' %}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
         {% for label in object_list %}
-        <li class="list-group-item list-group-item-action">
-            <div class="d-flex">
-                <div class="me-auto my-auto">{{ label.name }}</div>
-                <div class="ml-auto my-1 mr-1">
+                <tr>
+                <th scope="row">{{ label.pk }}</th>
+                <th >{{ label.name }}</th>
+                <th >{{ label.created }}</th>
+                <th>
                     <a type="button" class="btn btn-sm btn-primary ms-auto "
                        href="{% url 'update_label' label.pk %}"
                        role="button">{% translate 'Edit' %}</a>
                     <a type="button" class="btn btn-sm btn-danger ms-auto" href="{% url 'delete_label' label.pk %}"
                        role="button">{% translate 'Delete' %}</a>
-                </div>
-            </div>
-        </li>
+                </th>
+        </tr>
+        </tbody>
         {% endfor %}
-    </ul>
-
+                </table>
+    {% endif %}
 </div>
 {% endblock %}

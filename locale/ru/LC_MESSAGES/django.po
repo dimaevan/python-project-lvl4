@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-13 17:07+0000\n"
+"POT-Creation-Date: 2022-01-15 05:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,20 +25,6 @@ msgstr ""
 #| msgid "Labels"
 msgid "Label"
 msgstr "Метки"
-
-#: statuses/models.py:6 tasks/models.py:14 templates/tasks/task_view.html:15
-msgid "Status"
-msgstr "Статус"
-
-#: task_manager/views.py:35
-msgid "You have not permission to edit this user."
-msgstr "У вас нет прав для изменения другого пользователя."
-
-#: task_manager/views.py:51
-#, fuzzy
-#| msgid "I want to delete my account!"
-msgid "You have not permission to delete this account"
-msgstr "У вас нет прав для изменения другого пользователя."
 
 #: tasks/filter.py:8
 msgid "Only your tasks"
@@ -64,13 +50,17 @@ msgstr "Исполнитель"
 msgid "Author"
 msgstr "Автор"
 
+#: tasks/models.py:14 templates/tasks/task_view.html:15
+msgid "Status"
+msgstr "Статус"
+
 #: tasks/models.py:19
 #, fuzzy
 #| msgid "Tasks"
 msgid "Task"
 msgstr "Задачи"
 
-#: tasks/views.py:42
+#: tasks/views.py:45
 msgid "You have not permission to delete this task"
 msgstr "Задачу может удалить только её автор"
 
@@ -95,8 +85,7 @@ msgstr "Вы точно хотите удалить метку"
 #: templates/labels/label_delete.html:10 templates/labels/labels_list.html:19
 #: templates/statuses/status_delete.html:10
 #: templates/statuses/statuses_list.html:19 templates/tasks/task_delete.html:10
-#: templates/tasks/task_filter.html:33 templates/tasks/tasks_list.html:29
-#: templates/users/users.html:16
+#: templates/tasks/task_filter.html:33 templates/users/users.html:30
 msgid "Delete"
 msgstr "Удалить"
 
@@ -109,7 +98,7 @@ msgstr "Изменить статус"
 msgid "Update"
 msgstr "Изменить"
 
-#: templates/labels/labels_list.html:6 templates/nav.html:19
+#: templates/labels/labels_list.html:6 templates/nav.html:20
 #: templates/tasks/task_view.html:20
 msgid "Labels"
 msgstr "Метки"
@@ -120,7 +109,7 @@ msgstr "Создать новую метку"
 
 #: templates/labels/labels_list.html:17
 #: templates/statuses/statuses_list.html:17 templates/tasks/task_filter.html:31
-#: templates/tasks/tasks_list.html:27 templates/users/users.html:14
+#: templates/users/users.html:28
 msgid "Edit"
 msgstr "Изменить"
 
@@ -144,23 +133,23 @@ msgstr "Менеджер задач"
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/nav.html:13
+#: templates/nav.html:14
 msgid "Statuses"
 msgstr "Статусы"
 
-#: templates/nav.html:16 templates/tasks/tasks_list.html:6
+#: templates/nav.html:17
 msgid "Tasks"
 msgstr "Задачи"
 
-#: templates/nav.html:29
+#: templates/nav.html:31
 msgid "Logout"
 msgstr "Выход"
 
-#: templates/nav.html:33 templates/users/login.html:10
+#: templates/nav.html:35 templates/users/login.html:8
 msgid "Login"
 msgstr "Вход"
 
-#: templates/nav.html:36 templates/users/registration.html:10
+#: templates/nav.html:38 templates/users/registration.html:10
 msgid "SignUp"
 msgstr "Регистрация"
 
@@ -200,7 +189,7 @@ msgstr "Фильтр"
 msgid "Reset"
 msgstr "Сброс"
 
-#: templates/tasks/task_filter.html:28 templates/tasks/tasks_list.html:24
+#: templates/tasks/task_filter.html:28
 msgid "View"
 msgstr "Просмотр"
 
@@ -232,15 +221,15 @@ msgstr "Вы точно хотите удалить"
 msgid "I want to delete my account!"
 msgstr "Я хочу удалить свой аккаунт"
 
-#: templates/users/login.html:13
+#: templates/users/login.html:11 templates/users/login.html:13
 msgid "Nickname"
 msgstr "Никнейм"
 
-#: templates/users/login.html:18
+#: templates/users/login.html:18 templates/users/login.html:20
 msgid "Password"
 msgstr "Пароль"
 
-#: templates/users/login.html:21
+#: templates/users/login.html:23
 msgid "Sign in"
 msgstr "Вход"
 
@@ -251,6 +240,28 @@ msgstr "Регистрация"
 #: templates/users/user.html:6
 msgid "Update user"
 msgstr "Обновить пользователя"
+
+#: templates/users/users.html:12
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "Пользователи"
+
+#: templates/users/users.html:13
+msgid "Fullname"
+msgstr "Полное имя"
+
+#: templates/users/users.html:14
+msgid "Data joined"
+msgstr "Дата создания"
+
+#~ msgid "You have not permission to edit this user."
+#~ msgstr "У вас нет прав для изменения другого пользователя."
+
+#, fuzzy
+#~| msgid "I want to delete my account!"
+#~ msgid "You have not permission to delete this account"
+#~ msgstr "У вас нет прав для изменения другого пользователя."
 
 #~ msgid "Labels:"
 #~ msgstr "Метки"
