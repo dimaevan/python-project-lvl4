@@ -19,7 +19,6 @@ jobs:
           pip install poetry
           poetry env use python3.8
           make install
-            - name: Run linter
       - name: Run linter
         run: |
           make lint
