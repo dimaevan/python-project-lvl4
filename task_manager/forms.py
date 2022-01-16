@@ -3,15 +3,6 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class UserUpdateForm(UserCreationForm):
-    # username = forms.CharField(max_length=100, label='User',
-    #                            help_text=_('Required field. No more than 150 characters. Only letters, numbers and '
-    #                                        '@/./+/-/_ characters.'))
-    # first_name = forms.CharField(max_length=100, label=_('First name'), required=False)
-    # last_name = forms.CharField(max_length=100, label=_('Last name'), required=False)
-    # password1 = forms.CharField(max_length=100, label=_('Password'))
-    # password2 = forms.CharField(max_length=100,
-    #                             label=_('Password confirm'), help_text=_('Please enter your password again '
-    #                                                                      'to confirm.'))
 
     class Meta:
         model = User

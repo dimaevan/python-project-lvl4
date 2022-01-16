@@ -40,7 +40,8 @@ class TestStatusesView(TestCase):
         response = self.client.get(reverse('update_status', args=[status.pk]))
         self.assertTemplateUsed(response, 'statuses/statuses_update.html')
 
-        response = self.client.post(reverse('update_status', args=[status.pk, ]), {'status': 'New test'})
+        response = self.client.post(reverse('update_status', args=[status.pk, ]),
+                                    {'status': 'New test'})
         self.assertEqual(response.status_code, 302)
         status = Status.objects.filter(pk=status.pk)[0]
         self.assertEqual(status.status, 'New test')
