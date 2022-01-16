@@ -23,6 +23,6 @@ urlpatterns = [
     path('logout/', views.UserLogout.as_view(), name='logout'),
 ]
 
-dotenv.load_dotenv('local.env')
+dotenv.load_dotenv('.env')
 if os.environ.get('GUNICORN_STATIC'):
     urlpatterns += staticfiles_urlpatterns()

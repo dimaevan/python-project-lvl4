@@ -57,17 +57,17 @@ jobs:
           DEBUG: True
           ALLOWED_HOSTS: "*"
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          Rollbar_access_token: ${{ secrets.ROLLBAR_ACCESS_TOKEN }}
+          ROLLBAR_ACCESS_TOKEN: ${{ secrets.ROLLBAR_ACCESS_TOKEN }}
         run: |
           source .venv/bin/activate
           make mm
           make m
           make test-cov
 
-      - name: Test & publish code coverage
+      - name: Publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          DEBUG: True
-          ALLOWED_HOSTS: "*"
+#          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+#          DEBUG: True
+#          ALLOWED_HOSTS: "*"

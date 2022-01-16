@@ -6,13 +6,13 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = False
 
-dotenv_file = os.path.join(BASE_DIR, 'local.env')
+dotenv_file = os.path.join(BASE_DIR, '.env')
 if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv('local.env')
+    dotenv.load_dotenv(dotenv_file)
     DEBUG = True
 
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ['SECRET']
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
 # Application definition
