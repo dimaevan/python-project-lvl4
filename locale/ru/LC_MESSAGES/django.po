@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-15 12:44+0000\n"
+"POT-Creation-Date: 2022-01-16 13:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,7 +112,7 @@ msgstr "Изменить статус"
 msgid "Update"
 msgstr "Изменить"
 
-#: templates/labels/labels_list.html:6 templates/nav.html:20
+#: templates/labels/labels_list.html:6 templates/nav.html:24
 #: templates/tasks/task_view.html:20
 msgid "Labels"
 msgstr "Метки"
@@ -129,7 +129,7 @@ msgstr "Изменить"
 
 #: templates/main_page.html:9
 msgid "Hello from Hexlet"
-msgstr "Привет от ХЕкслета"
+msgstr "Привет от Хекслета"
 
 #: templates/main_page.html:10
 msgid "Practical programming courses"
@@ -139,31 +139,31 @@ msgstr "Практические курсы программирования"
 msgid "Know more"
 msgstr "Подробнее"
 
-#: templates/nav.html:7
+#: templates/nav.html:5
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: templates/nav.html:10 templates/users/users.html:5
+#: templates/nav.html:14 templates/users/users.html:5
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/nav.html:14
+#: templates/nav.html:18
 msgid "Statuses"
 msgstr "Статусы"
 
-#: templates/nav.html:17
+#: templates/nav.html:21
 msgid "Tasks"
 msgstr "Задачи"
 
-#: templates/nav.html:31
+#: templates/nav.html:35
 msgid "Logout"
 msgstr "Выход"
 
-#: templates/nav.html:35 templates/users/login.html:8
+#: templates/nav.html:39 templates/users/login.html:8
 msgid "Login"
 msgstr "Вход"
 
-#: templates/nav.html:38 templates/users/registration.html:10
+#: templates/nav.html:42 templates/users/registration.html:10
 msgid "SignUp"
 msgstr "Регистрация"
 
