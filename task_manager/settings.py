@@ -1,15 +1,16 @@
 from pathlib import Path
-import dotenv
+from dotenv import load_dotenv
 import os
 import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-DEBUG = False
-
-dotenv.load_dotenv()
 
 
-SECRET_KEY = os.getenv('SECRET')
+env_path = os.path.join(BASE_DIR, '.env')
+load_dotenv(dotenv_path=env_path)
+
+
+SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', 'localhost']
 
