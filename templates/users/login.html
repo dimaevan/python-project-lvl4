@@ -4,14 +4,14 @@
 
 <div class="mt-5">
     <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
         <h1 class="h2 mb-3 fw-normal">{% translate 'Login' %}</h1>
+        {% csrf_token %}
+
 
         <div class="form-group mb-3">
             <label for="Name">{% translate 'Nickname' %}</label>
             <input type="text" class="form-control mt-2" id="Name"
                    placeholder="{% translate 'Nickname' %}" name="username" id="id_username">
-
         </div>
 
         <div class="form-group  mb-3">

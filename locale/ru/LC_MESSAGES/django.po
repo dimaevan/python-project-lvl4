@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-16 11:24+0000\n"
+"POT-Creation-Date: 2022-01-16 12:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,16 +20,12 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: labels/models.py:6 tasks/models.py:15
-#, fuzzy
-#| msgid "Labels"
+#: labels/models.py:6 tasks/models.py:15 templates/tasks/task_filter.html:13
 msgid "Label"
 msgstr "Метки"
 
 #: labels/models.py:7 statuses/models.py:7 templates/labels/labels_list.html:16
 #: templates/statuses/statuses_list.html:15
-#, fuzzy
-#| msgid "Date creation"
 msgid "Data creation"
 msgstr "Дата создания"
 
@@ -54,7 +50,8 @@ msgstr "Изменить задачу"
 msgid "Description"
 msgstr "Дата создания"
 
-#: tasks/models.py:11 templates/tasks/task_view.html:14
+#: tasks/models.py:11 templates/tasks/task_filter.html:12
+#: templates/tasks/task_view.html:14
 msgid "Worker"
 msgstr "Исполнитель"
 
@@ -62,7 +59,8 @@ msgstr "Исполнитель"
 msgid "Author"
 msgstr "Автор"
 
-#: tasks/models.py:14 templates/tasks/task_view.html:15
+#: tasks/models.py:14 templates/tasks/task_filter.html:11
+#: templates/tasks/task_view.html:15
 msgid "Status"
 msgstr "Статус"
 
@@ -99,7 +97,7 @@ msgstr "Вы точно хотите удалить метку"
 #: templates/labels/label_delete.html:10 templates/labels/labels_list.html:32
 #: templates/statuses/status_delete.html:10
 #: templates/statuses/statuses_list.html:32 templates/tasks/task_delete.html:10
-#: templates/tasks/task_filter.html:33 templates/users/users.html:30
+#: templates/tasks/task_filter.html:38 templates/users/users.html:30
 msgid "Delete"
 msgstr "Удалить"
 
@@ -122,7 +120,7 @@ msgid "Create new label"
 msgstr "Создать новую метку"
 
 #: templates/labels/labels_list.html:30
-#: templates/statuses/statuses_list.html:30 templates/tasks/task_filter.html:31
+#: templates/statuses/statuses_list.html:30 templates/tasks/task_filter.html:36
 #: templates/users/users.html:28
 msgid "Edit"
 msgstr "Изменить"
@@ -151,7 +149,7 @@ msgstr "Пользователи"
 msgid "Statuses"
 msgstr "Статусы"
 
-#: templates/nav.html:21
+#: templates/nav.html:21 templates/tasks/task_filter.html:6
 msgid "Tasks"
 msgstr "Задачи"
 
@@ -159,7 +157,7 @@ msgstr "Задачи"
 msgid "Logout"
 msgstr "Выход"
 
-#: templates/nav.html:39 templates/users/login.html:8
+#: templates/nav.html:39 templates/users/login.html:7
 msgid "Login"
 msgstr "Вход"
 
@@ -195,15 +193,15 @@ msgstr "Вы точно хотите удалить задачу"
 msgid "Create new task"
 msgstr "Создать новую задачу"
 
-#: templates/tasks/task_filter.html:16
+#: templates/tasks/task_filter.html:21
 msgid "Filter"
 msgstr "Фильтр"
 
-#: templates/tasks/task_filter.html:17
+#: templates/tasks/task_filter.html:22
 msgid "Reset"
 msgstr "Сброс"
 
-#: templates/tasks/task_filter.html:28
+#: templates/tasks/task_filter.html:33
 msgid "View"
 msgstr "Просмотр"
 
@@ -235,9 +233,9 @@ msgstr "Вы точно хотите удалить"
 msgid "I want to delete my account!"
 msgstr "Я хочу удалить свой аккаунт"
 
-#: templates/users/login.html:11 templates/users/login.html:13
+#: templates/users/login.html:12 templates/users/login.html:14
 msgid "Nickname"
-msgstr "Никнейм"
+msgstr "Имя пользователя"
 
 #: templates/users/login.html:18 templates/users/login.html:20
 msgid "Password"
@@ -255,10 +253,14 @@ msgstr "Регистрация"
 msgid "Update user"
 msgstr "Обновить пользователя"
 
+#: templates/users/users.html:11
+msgid "Id"
+msgstr "Id"
+
 #: templates/users/users.html:12
 #, fuzzy
 #| msgid "Users"
-msgid "Username"
+msgid "User"
 msgstr "Пользователи"
 
 #: templates/users/users.html:13
@@ -268,6 +270,11 @@ msgstr "Полное имя"
 #: templates/users/users.html:14
 msgid "Data joined"
 msgstr "Дата создания"
+
+#, fuzzy
+#~| msgid "Users"
+#~ msgid "Username"
+#~ msgstr "Пользователи"
 
 #~ msgid "You have not permission to edit this user."
 #~ msgstr "У вас нет прав для изменения другого пользователя."
