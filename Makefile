@@ -11,7 +11,7 @@ rung:
 lint:
 	@poetry run flake8 task_manager/ labels/ statuses/ tasks/ templates/ tests/
 requirements:
-	@poetry export -f requirements.txt --output requirements.txt
+	pip freeze > requirements.txt
 translation:
 	django-admin makemessages -l en
 compile:
