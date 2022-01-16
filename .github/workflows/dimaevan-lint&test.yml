@@ -53,11 +53,11 @@ jobs:
       - name: Run tests
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-          SECRET: ${{ secrets.SECRET }}
+          SECRET: ${{ secrets.SECRET_KEY }}
           DEBUG: True
-          ALLOWED_HOSTS: "['*']"
+          ALLOWED_HOSTS: "*"
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          Rollbar_access_token: ${{ secrets.Rollbar_access_token }}
+          Rollbar_access_token: ${{ secrets.ROLLBAR_ACCESS_TOKEN }}
         run: |
           source .venv/bin/activate
           make mm
@@ -68,6 +68,6 @@ jobs:
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-          SECRET: ${{ secrets.SECRET }}
+          SECRET: ${{ secrets.SECRET_KEY }}
           DEBUG: True
-          ALLOWED_HOSTS: "['*']"
+          ALLOWED_HOSTS: "*"
