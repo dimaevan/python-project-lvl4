@@ -16,6 +16,7 @@ pytest-django = "^4.5.2"
 django-filter = "^21.1"
 pytest-cov = "^3.0.0"
 whitenoise = "^5.3.0"
+dj-database-url = "^0.5.0"
 
 [tool.poetry.dev-dependencies]
 Faker = "^11.3.0"
