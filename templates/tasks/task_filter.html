@@ -3,23 +3,24 @@
 {% block content %}
 {% load bootstrap5 %}
 <div>
-<h2 class="mt-2">{% translate 'Tasks' %}:</h2>
+    <h2 class="mt-2">{% translate 'Tasks' %}:</h2>
     <a href="{% url 'add_task' %}" class="btn btn-primary mt-2" role="button">{% translate 'Create new task' %}</a>
-<div class="p-3 mb-2 mt-2 bg-secondary bg-opacity-10 border rounded">
-<form method="get">
+    <div class="p-3 mb-2 mt-2 bg-secondary bg-opacity-10 border rounded">
+        <form method="get">
 
-    <div><span>{% translate 'Status' %} </span> {% bootstrap_field filter.form.status show_label='skip' %}</div>
-    <div><span>{% translate 'Worker' %} </span> {% bootstrap_field filter.form.workers show_label='skip' %}</div>
-    <div><span>{% translate 'Label' %} </span> {% bootstrap_field filter.form.label show_label='skip' %}</div>
-    <div><span></span> {% bootstrap_field filter.form.check_box show_label='skip' %}</div>
+            <div><span class="mb-1">{% translate 'Status' %} </span> {% bootstrap_field filter.form.status show_label='skip' %}
+            </div>
+            <div><span>{% translate 'Executor' %} </span> {% bootstrap_field filter.form.executor show_label='skip' %}
+            </div>
+            <div><span>{% translate 'Label' %} </span> {% bootstrap_field filter.form.label show_label='skip' %}</div>
 
+            <div class="mt-1 mb-1">
+            <input type="checkbox" name="self_task" class="form-check-input is-valid" id="id_self_task">  <label
+                class="form-check-label" for="id_self_task">  {% translate 'Only your tasks' %}  </label>
+            </div>
 
-<!--    {% bootstrap_field filter.form.workers layout='horizontal' %}-->
-<!--    {% bootstrap_field filter.form.label layout='horizontal' %}-->
-<!--    {% bootstrap_field filter.form.check_box layout='horizontal' %}-->
-
-    <button type="submit" class="btn btn-primary">{% translate 'Filter' %}</button>
-    <a class="btn btn-secondary" href="{% url 'tasks' %}" type="reset" role="button">{% translate 'Reset' %}</a>
+<button type="submit" class="btn btn-primary">{% translate 'Filter' %}</button>
+<a class="btn btn-secondary" href="{% url 'tasks' %}" type="reset" role="button">{% translate 'Reset' %}</a>
 </form>
 </div>
 

@@ -9,6 +9,7 @@ class TaskFilter(django_filters.FilterSet):
     self_task = django_filters.BooleanFilter(widget=widgets.CheckboxInput, field_name='author', label=text,
                                              method='filter_by_author')
 
+
     def filter_by_author(self, queryset, name, value):
         if value:
             return queryset.filter(author=self.request.user)

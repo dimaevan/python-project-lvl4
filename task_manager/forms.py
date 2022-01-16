@@ -1,7 +1,5 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.utils.translation import ugettext_lazy as _
-from django import forms
 
 
 class UserUpdateForm(UserCreationForm):
@@ -19,4 +17,3 @@ class UserUpdateForm(UserCreationForm):
         model = User
         fields = ['first_name', 'last_name', 'username', 'password1',
                   'password2']
-

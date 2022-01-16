@@ -9,7 +9,7 @@
         {% csrf_token %}
         <div>{% bootstrap_field form.name %}</div>
         <div>{% bootstrap_field form.description %}</div>
-        <div>{% bootstrap_field form.workers %}</div>
+        <div>{% bootstrap_field form.executor %}</div>
         <div>{% bootstrap_field form.status %}</div>
         <div>{% bootstrap_field form.label field_class=multiple %}</div>
         <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
