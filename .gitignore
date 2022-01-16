@@ -4,7 +4,7 @@ db.sqlite3
 *.env
 __pycache__
 fake.py
-migrations/
+
 users.txt
 .coverage
 coverage.xml
