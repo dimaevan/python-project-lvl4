@@ -8,7 +8,9 @@ DEBUG = False
 
 dotenv.load_dotenv()
 
-SECRET_KEY = os.environ['SECRET']
+
+SECRET_KEY = os.getenv('SECRET')
+DEBUG = os.getenv('DEBUG')
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', 'localhost']
 
 # Application definition
@@ -125,7 +127,7 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
-ROLLBAR_TOKEN = os.environ['ROLLBAR_ACCESS_TOKEN']
+ROLLBAR_TOKEN = os.getenv('ROLLBAR_ACCESS_TOKEN')
 ROLLBAR = {
     'access_token': ROLLBAR_TOKEN,
     'environment': 'production',
