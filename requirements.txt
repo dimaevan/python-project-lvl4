@@ -1,37 +1,32 @@
-Package             Version
-------------------- -------
-asgiref             3.4.1
-attrs               21.4.0
-beautifulsoup4      4.10.0
-coverage            6.2
-Django              3.2.11
-django-bootstrap-v5 1.0.8
-django-extensions   3.1.5
-django-filter       21.1
-Faker               11.3.0
-flake8              4.0.1
-gunicorn            20.1.0
-iniconfig           1.1.1
-mccabe              0.6.1
-packaging           21.3
-pip                 21.3.1
-pluggy              1.0.0
-py                  1.11.0
-pycodestyle         2.8.0
-pyflakes            2.4.0
-pyparsing           3.0.6
-pytest              6.2.5
-pytest-cov          3.0.0
-pytest-django       4.5.2
-python-dateutil     2.8.2
-python-dotenv       0.19.2
-pytz                2021.3
-setuptools          60.2.0
-six                 1.16.0
-soupsieve           2.3.1
-sqlparse            0.4.2
-text-unidecode      1.3
-toml                0.10.2
-tomli               2.0.0
-wheel               0.37.1
-whitenoise          5.3.0
+asgiref @ file:///home/dimaevan/.cache/pypoetry/artifacts/66/e6/9d/1120805fa1cbf481e628bb06bdda3cc7a6623fce6ed7ceccf057e53faf/asgiref-3.4.1-py3-none-any.whl
+attrs @ file:///home/dimaevan/.cache/pypoetry/artifacts/c4/ee/75/fcd6c2f4c5a1d60b1bcd97014702ca01b3f032fd927d88780b38708409/attrs-21.4.0-py2.py3-none-any.whl
+beautifulsoup4 @ file:///home/dimaevan/.cache/pypoetry/artifacts/ca/86/54/c5a0cc27d867a363989b61f608aa7c0d3edf90e6555b771151cd84dd74/beautifulsoup4-4.10.0-py3-none-any.whl
+coverage @ file:///home/dimaevan/.cache/pypoetry/artifacts/89/ee/3c/69d33ec0d5237d949555e7e2f4a1b21b71115ef26d6111f698b95311b0/coverage-6.2-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl
+Django @ file:///home/dimaevan/.cache/pypoetry/artifacts/ca/79/ab/3e90b083b0dac33deea3a4381388167ec1dddbb6c3c7fc1867f2f6468b/Django-3.2.11-py3-none-any.whl
+django-bootstrap-v5 @ file:///home/dimaevan/.cache/pypoetry/artifacts/ea/aa/e1/50cc6adfe9123d26948fc4a7727a32f52543a618261e32ab49e8867a92/django_bootstrap_v5-1.0.8-py3-none-any.whl
+django-extensions @ file:///home/dimaevan/.cache/pypoetry/artifacts/48/ec/78/cf2bc730412f70766fc1164d4f8172e6ee32e15321f44a7c539f7a8d1c/django_extensions-3.1.5-py3-none-any.whl
+django-filter @ file:///home/dimaevan/.cache/pypoetry/artifacts/ea/f4/ac/06d7509a6499a710bafc188c1566f529bd8027eeb970eb047562ebd233/django_filter-21.1-py3-none-any.whl
+Faker @ file:///home/dimaevan/.cache/pypoetry/artifacts/f8/48/f4/9f8f7069248c454ec45b3e93770f7e7c3b79f0820138c9979acd9e2ddf/Faker-11.3.0-py3-none-any.whl
+flake8 @ file:///home/dimaevan/.cache/pypoetry/artifacts/6b/d8/67/6516837c645c57af9cad7b290e1e6cbe92a126641fa84a5dde6495f3c3/flake8-4.0.1-py2.py3-none-any.whl
+gunicorn @ file:///home/dimaevan/.cache/pypoetry/artifacts/9f/68/9f/f1166be9473b4fe2cc59c98fac616db1f94b18662b9055d1ac940374e3/gunicorn-20.1.0-py3-none-any.whl
+iniconfig @ file:///home/dimaevan/.cache/pypoetry/artifacts/1d/67/0c/79706e7a41ef01be0b1a38aa3b4ddc9bd800a95ccd8d8dc7de4e090623/iniconfig-1.1.1-py2.py3-none-any.whl
+mccabe @ file:///home/dimaevan/.cache/pypoetry/artifacts/a3/d3/68/f7f7115194f6fe8c487def3afa3b089a428f90650cf1b7be71afa83d12/mccabe-0.6.1-py2.py3-none-any.whl
+packaging @ file:///home/dimaevan/.cache/pypoetry/artifacts/d3/1f/90/3f2473250ebd055fe7f0856810677783949fc0d2e5f25bbb4dc00ad0a9/packaging-21.3-py3-none-any.whl
+pluggy @ file:///home/dimaevan/.cache/pypoetry/artifacts/49/3e/55/309ec3705ba3309d817d531002c0a02f643d06c5d5a889ce43236130d5/pluggy-1.0.0-py2.py3-none-any.whl
+py @ file:///home/dimaevan/.cache/pypoetry/artifacts/71/fb/64/bfdc833c2055a893883f33deaac35ef2cbdd95d58031cfc69a630f32bf/py-1.11.0-py2.py3-none-any.whl
+pycodestyle @ file:///home/dimaevan/.cache/pypoetry/artifacts/67/1d/0b/aa6ec86495f3fc57e748e006fb36d7b4e65ddaf6de336617166ccad96d/pycodestyle-2.8.0-py2.py3-none-any.whl
+pyflakes @ file:///home/dimaevan/.cache/pypoetry/artifacts/ce/06/1e/5fd69e017a941ae783a7e4d3fb29abc5238f0026d7745b4dc26d7e3379/pyflakes-2.4.0-py2.py3-none-any.whl
+pyparsing @ file:///home/dimaevan/.cache/pypoetry/artifacts/82/58/91/afb3b5733aa35fd97a07c3a191b87d62060e45f9dfa1149e43ac4112b6/pyparsing-3.0.6-py3-none-any.whl
+pytest @ file:///home/dimaevan/.cache/pypoetry/artifacts/d3/5c/6c/ecc815bbb070306dcb67bef0ec365f599b0f4b6ce85fc620f675c77231/pytest-6.2.5-py3-none-any.whl
+pytest-cov @ file:///home/dimaevan/.cache/pypoetry/artifacts/a3/4c/ca/234bf6c69d192516716a1fec5b61b6329bb00e1d33529113864b1db4eb/pytest_cov-3.0.0-py3-none-any.whl
+pytest-django @ file:///home/dimaevan/.cache/pypoetry/artifacts/2e/65/cc/e83993ffe2c521d95b4c7b924697759e1d01863a1b275ecb1fbd4fa487/pytest_django-4.5.2-py3-none-any.whl
+python-dateutil @ file:///home/dimaevan/.cache/pypoetry/artifacts/39/9b/3b/576da7c854551d780528d75132c98882925e44de0aecf8a31a4bea379c/python_dateutil-2.8.2-py2.py3-none-any.whl
+python-dotenv @ file:///home/dimaevan/.cache/pypoetry/artifacts/6b/37/6c/56779e11f416c21027bce901621ae7a5fa1c89d2286e1d206e7167f3e5/python_dotenv-0.19.2-py2.py3-none-any.whl
+pytz @ file:///home/dimaevan/.cache/pypoetry/artifacts/a0/f8/66/b50e6d372fa21e4d6db4b2fe5c5e94aaf59b82d02a7b3215fbc4fae889/pytz-2021.3-py2.py3-none-any.whl
+six @ file:///home/dimaevan/.cache/pypoetry/artifacts/89/b2/f8/fd92b6d5daa0f8889429b2fc67ec21eedc5cae5d531ee2853828ced6c7/six-1.16.0-py2.py3-none-any.whl
+soupsieve @ file:///home/dimaevan/.cache/pypoetry/artifacts/b5/66/aa/1ed4671be8452f4ebbce262d18ed07ff90e33e200207425bf16f5b2e20/soupsieve-2.3.1-py3-none-any.whl
+sqlparse @ file:///home/dimaevan/.cache/pypoetry/artifacts/10/f5/22/c9c991a71e27c4d8f69907d92cce74a369cbb3183dc4a6d27e2ae4ab0b/sqlparse-0.4.2-py3-none-any.whl
+text-unidecode @ file:///home/dimaevan/.cache/pypoetry/artifacts/34/ff/90/dfdc177dbd51133d449192d5f6c8bd34ced8d4c3ce8f648a5cbcacd517/text_unidecode-1.3-py2.py3-none-any.whl
+toml @ file:///home/dimaevan/.cache/pypoetry/artifacts/51/ac/24/674da558495229c57c3d2333cb23e24aac7aadf723ced29e2cc41a9e6e/toml-0.10.2-py2.py3-none-any.whl
+tomli @ file:///home/dimaevan/.cache/pypoetry/artifacts/af/51/c3/204148ac332c7219895c7ed2e4df924635c0efa17b632bc29f1260f484/tomli-2.0.0-py3-none-any.whl
+whitenoise @ file:///home/dimaevan/.cache/pypoetry/artifacts/12/cf/d0/5982150a72e04e63fd7c59bcbbcccd2d787341bbe850e6324ece12cf53/whitenoise-5.3.0-py2.py3-none-any.whl
