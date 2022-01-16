@@ -2,20 +2,17 @@ from pathlib import Path
 import dotenv
 import os
 import dj_database_url
-from django.core.management.utils import get_random_secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 DEBUG = False
 
 dotenv_file = os.path.join(BASE_DIR, 'local.env')
-
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv('local.env')
     DEBUG = True
 
 
-SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
+SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
 # Application definition
@@ -74,7 +71,15 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -124,9 +129,9 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
-
+ROLLBAR_TOKEN = os.environ['ROLLBAR_ACCESS_TOKEN']
 ROLLBAR = {
-    'access_token': os.getenv('ROLLBAR_ACCESS_TOKEN'),
+    'access_token': ROLLBAR_TOKEN,
     'environment': 'production',
     'branch': 'master',
     'root': os.getcwd(),
