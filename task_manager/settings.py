@@ -17,9 +17,9 @@ if os.path.isfile(dotenv_file):
     dotenv.load_dotenv('local.env')
 
 
-SECRET_KEY = os.environ['SECRET']
-DEBUG = os.environ['DEBUG']
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
+SECRET_KEY = os.getenv('SECRET')
+DEBUG = os.getenv('DEBUG')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -139,7 +139,7 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
 
 ROLLBAR = {
-    'access_token': os.environ['Rollbar_access_token'],
+    'access_token': os.getenv('Rollbar_access_token'),
     'environment': 'production',
     'branch': 'master',
     'root': os.getcwd(),
