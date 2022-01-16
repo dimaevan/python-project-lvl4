@@ -17,7 +17,7 @@ if os.path.isfile(dotenv_file):
     dotenv.load_dotenv('local.env')
 
 
-SECRET_KEY = os.getenv('SECRET')
+SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG')
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 
