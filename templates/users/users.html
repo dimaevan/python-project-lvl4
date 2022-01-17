@@ -16,9 +16,9 @@
         </tr>
         </thead>
         <tbody>
-        {% for user in object_list %}
+        {% for user in users %}
         <tr>
-                <th scope="row">{{ user.pk }}</th>
+                <th scope="row">{{ user.id }}</th>
                 <th >{{ user.username }}</th>
                 <th >{{ user.first_name }} {{ user.last_name }}</th>
                 <th >{{ user.date_joined }}</th>

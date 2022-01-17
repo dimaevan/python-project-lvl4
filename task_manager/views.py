@@ -14,7 +14,7 @@ from .forms import UserUpdateForm
 class UsersDetailView(ListView):
     model = User
     template_name = 'users/users.html'
-    ordering = ['username']
+    context_object_name = 'users'
 
 
 class UserSignUpView(CreateView):
@@ -59,7 +59,7 @@ class UserDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
 
 class UserLoginView(auth_view.LoginView):
     template_name = 'users/login.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('main_page')
 
     def form_valid(self, form):
         login(self.request, form.get_user())
