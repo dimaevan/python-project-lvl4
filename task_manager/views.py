@@ -43,11 +43,12 @@ class UserUpdateView(SuccessMessageMixin, UserPassesTestMixin, LoginRequiredMixi
         return redirect('users')
 
 
-class UserDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+class UserDeleteView(SuccessMessageMixin, UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     model = User
     template_name = 'users/delete_user.html'
-    success_url = reverse_lazy('users')
     login_url = reverse_lazy('login')
+    success_url = reverse_lazy('users')
+    success_message = _('User successfully deleted')
 
     def test_func(self):
         obj = self.get_object()
@@ -57,6 +58,11 @@ class UserDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
         text = _('You have not permission to edit this user.')
         messages.add_message(self.request, messages.WARNING, text)
         return redirect('users')
+
+    def post(self, request, *args, **kwargs):
+        text = _('User successfully deleted')
+        messages.add_message(self.request, messages.WARNING, text)
+        return self.delete(request, *args, **kwargs)
 
 
 class UserLoginView(auth_view.LoginView):

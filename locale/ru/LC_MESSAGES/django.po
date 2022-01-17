@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 13:41+0000\n"
+"POT-Creation-Date: 2022-01-17 13:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -220,7 +220,7 @@ msgid "Do you really want to delete task"
 msgstr "Вы точно хотите удалить задачу"
 
 #: templates/tasks/task_filter.html:7
-msgid "Create new task"
+msgid "Create task"
 msgstr "Создать задачу"
 
 #: templates/tasks/task_filter.html:15
@@ -307,6 +307,9 @@ msgstr "Полное имя"
 msgid "Data joined"
 msgstr "Дата создания"
 
+#~ msgid "Create new task"
+#~ msgstr "Создать задачу"
+
 #~ msgid "I want to delete my account!"
 #~ msgstr "Я хочу удалить свой аккаунт"
 
@@ -315,9 +318,6 @@ msgstr "Дата создания"
 
 #~ msgid "Do you really want to delete status"
 #~ msgstr "Вы точно хотите удалить статус"
-
-#~ msgid "Create task"
-#~ msgstr "Создать задачу"
 
 #~ msgid "Submit"
 #~ msgstr "Подтвердить"

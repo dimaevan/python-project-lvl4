@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 13:41+0000\n"
+"POT-Creation-Date: 2022-01-17 13:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,15 +40,19 @@ msgstr "Пользователь успешно зарегистрирован"
 msgid "User successfully changed "
 msgstr "Пользователь успешно изменён"
 
-#: task_manager/views.py:41 task_manager/views.py:57
+#: task_manager/views.py:41 task_manager/views.py:58
 msgid "You have not permission to edit this user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: task_manager/views.py:68
+#: task_manager/views.py:51 task_manager/views.py:63
+msgid "User successfully deleted"
+msgstr "Пользователь успешно удалён"
+
+#: task_manager/views.py:74
 msgid "You are login"
 msgstr "Вы залогинены"
 
-#: task_manager/views.py:73
+#: task_manager/views.py:79
 msgid ""
 "Please enter the correct username and password. Both fields may be case "
 "sensitive. "
@@ -56,6 +60,6 @@ msgstr ""
 "Пожалуйста, введите правильное имя пользователя и пароль. Оба поля могут "
 "быть чувствительны к регистру. "
 
-#: task_manager/views.py:81
+#: task_manager/views.py:87
 msgid "You have successfully logged out."
 msgstr "Вы разлогинены"
