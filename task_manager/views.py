@@ -24,13 +24,14 @@ class UserSignUpView(SuccessMessageMixin, CreateView):
     success_message = _('User registered successfully')
 
 
-class UserUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+class UserUpdateView(SuccessMessageMixin, UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     model = User
     template_name = 'users/user.html'
     form_class = forms.UserUpdateForm
 
     success_url = reverse_lazy('users')
     login_url = reverse_lazy('login')
+    success_message = _('User successfully changed ')
 
     def test_func(self):
         obj = self.get_object()
