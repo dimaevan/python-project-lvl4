@@ -7,7 +7,6 @@ from . forms import TaskForm
 from task_manager import mixins
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 
 
@@ -46,7 +45,6 @@ class TaskDeleteView(SuccessMessageMixin, mixins.MyTaskMixin, DeleteView):
         self.object.delete()
         messages.add_message(self.request, messages.INFO, text_success)
         return HttpResponseRedirect(success_url)
-
 
 
 class TaskDetailView(mixins.MyLoginRequired, DetailView):
