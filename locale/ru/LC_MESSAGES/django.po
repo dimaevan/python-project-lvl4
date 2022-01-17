@@ -141,8 +141,6 @@ msgid "Labels"
 msgstr "Метки"
 
 #: templates/labels/labels_list.html:7
-#, fuzzy
-#| msgid "Create new label"
 msgid "Create label"
 msgstr "Создать метку"
 
