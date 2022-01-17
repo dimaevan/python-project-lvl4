@@ -24,23 +24,46 @@
 </form>
 </div>
 
-<ul class="list-group mt-3">
-    {% for task in filter.qs %}
-    <li class="list-group-item list-group-item-action">
-        <div class="d-flex">
-            <div class="me-auto my-auto">{{ task.name }}</div>
-            <div class="ml-auto my-1 mr-1">
-                <a type="button" class="btn btn-sm btn-secondary ms-auto" href="{% url 'view_task' task.pk %}"
-                   role="button">{% translate 'View' %}</a>
-                <a type="button" class="btn btn-sm btn-primary ms-auto "
-                   href="{% url 'update_task' task.pk %}"
-                   role="button">{% translate 'Edit' %}</a>
-                <a type="button" class="btn btn-sm btn-danger ms-auto" href="{% url 'delete_task' task.pk %}"
-                   role="button">{% translate 'Delete' %}</a>
-            </div>
-        </div>
-    </li>
-    {% endfor %}
-</ul>
+
+
+
+    {% if filter.qs %}
+        <table class="table">
+        <thead>
+        <tr>
+            <th scope="row">{% translate 'Id' %}</th>
+            <th>{% translate 'Name' %}</th>
+            <th>{% translate 'Status' %}</th>
+            <th>{% translate 'Author' %}</th>
+            <th>{% translate 'Executor' %}</th>
+            <th>{% translate 'Data joined' %}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for task in filter.qs %}
+
+                <tr>
+                <th scope="row">{{ task.id }}</th>
+                <th ><a href="{% url 'view_task' task.pk %}">{{ task.name }}</a></th>
+                <th >{{ task.status }}</th>
+                <th >{{ task.author }}</th>
+                <th >{{ task.executor.first_name }} {{ task.executor.last_name }}</th>
+                <th >{{ task.created }}</th>
+                <th>
+                    <a type="button" class="btn btn-sm btn-primary "
+                       href="{% url 'update_task' task.pk %}"
+                       role="button">{% translate 'Edit' %}</a>
+                    <a type="button" class="btn btn-sm btn-danger " href="{% url 'delete_task' task.pk %}"
+                       role="button">{% translate 'Delete' %}</a>
+                </th>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+
 </div>
 {% endblock %}

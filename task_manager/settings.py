@@ -144,3 +144,4 @@ ROLLBAR = {
     'branch': 'master',
     'root': os.getcwd(),
 }
+AUTH_USER_MODEL = 'task_manager.User'
