@@ -14,7 +14,7 @@ class Task(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Author',
                                verbose_name=_('Author'))
     status = models.ForeignKey(Status, on_delete=models.CASCADE, verbose_name=_('Status'))
-    label = models.ManyToManyField(Label, blank=True, verbose_name=_('Label'))
+    labels = models.ManyToManyField(Label, blank=True, verbose_name=_('Label'))
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
