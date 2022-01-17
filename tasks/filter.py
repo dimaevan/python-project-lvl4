@@ -18,10 +18,7 @@ class TaskFilter(django_filters.FilterSet):
         else:
             return queryset
 
-    label = django_filters.filters.ModelChoiceFilter(
-            queryset=Label.objects.all(),
-            label=_('Label')
-        )
+    label = django_filters.filters.ModelChoiceFilter(queryset=Label.objects.all(), label=_('Label'))
 
     class Meta:
         model = Task
