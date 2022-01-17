@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.views.generic import TemplateView
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 from task_manager import views
-import dotenv
-import os
+# import dotenv
+# import os
+# from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),

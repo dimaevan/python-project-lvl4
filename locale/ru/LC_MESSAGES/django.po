@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 11:56+0000\n"
+"POT-Creation-Date: 2022-01-17 12:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -184,9 +184,9 @@ msgstr "Выход"
 msgid "Login"
 msgstr "Вход"
 
-#: templates/nav.html:43 templates/users/registration.html:10
+#: templates/nav.html:43
 msgid "SignUp"
-msgstr "Зарегистрировать"
+msgstr "Регистрация"
 
 #: templates/statuses/status_delete.html:7
 msgid "Do you really want to delete status"
@@ -274,7 +274,11 @@ msgstr "Войти"
 
 #: templates/users/registration.html:6
 msgid "Registration"
-msgstr "Регистрация"
+msgstr "Зарегистрировать"
+
+#: templates/users/registration.html:10
+msgid "Sign"
+msgstr "Зарегистрировать"
 
 #: templates/users/user.html:6
 msgid "Update user"

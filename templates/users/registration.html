@@ -7,7 +7,7 @@
         <form method="post" action="{% url 'registration' %}">
             {% csrf_token %}
             {% bootstrap_form form %}
-            <button type="submit" class="btn btn-success">{% translate 'SignUp' %}</button>
+            <button type="submit" class="btn btn-success">{% translate 'Sign' %}</button>
         </form>
     </div>
 {% endblock %}
