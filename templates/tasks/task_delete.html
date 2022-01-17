@@ -7,7 +7,7 @@
     <h2 class="mt-3">{% translate 'Do you really want to delete task' %} "{{ object }}"?</h2>
     <form action="" method="post">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger">{% translate 'Delete' %} </button>
+        <button type="submit" class="btn btn-danger">{% translate 'Yes, Delete' %}</button>
     </form>
 </div>
 {% endblock %}

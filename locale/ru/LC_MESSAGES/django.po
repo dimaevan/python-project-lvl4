@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 13:37+0000\n"
+"POT-Creation-Date: 2022-01-17 13:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,7 +112,8 @@ msgid "Do you really want to delete"
 msgstr "Вы точно хотите удалить задачу"
 
 #: templates/labels/label_delete.html:11
-#: templates/statuses/status_delete.html:11
+#: templates/statuses/status_delete.html:11 templates/tasks/task_delete.html:10
+#: templates/users/delete_user.html:10
 msgid "Yes, Delete"
 msgstr "Да, удалить"
 
@@ -144,8 +145,8 @@ msgid "Edit"
 msgstr "Изменить"
 
 #: templates/labels/labels_list.html:32
-#: templates/statuses/statuses_list.html:30 templates/tasks/task_delete.html:10
-#: templates/tasks/task_filter.html:39 templates/users/users.html:30
+#: templates/statuses/statuses_list.html:30 templates/tasks/task_filter.html:39
+#: templates/users/users.html:30
 msgid "Delete"
 msgstr "Удалить"
 
@@ -266,10 +267,6 @@ msgstr "Удалить пользователя"
 msgid "Are you sure you want to delete"
 msgstr "Вы точно хотите удалить"
 
-#: templates/users/delete_user.html:10
-msgid "I want to delete my account!"
-msgstr "Я хочу удалить свой аккаунт"
-
 #: templates/users/login.html:12 templates/users/login.html:14
 msgid "Nickname"
 msgstr "Имя пользователя"
@@ -309,6 +306,9 @@ msgstr "Полное имя"
 #: templates/users/users.html:14
 msgid "Data joined"
 msgstr "Дата создания"
+
+#~ msgid "I want to delete my account!"
+#~ msgstr "Я хочу удалить свой аккаунт"
 
 #~ msgid "Do you really want to delete label"
 #~ msgstr "Вы точно хотите удалить метку"
