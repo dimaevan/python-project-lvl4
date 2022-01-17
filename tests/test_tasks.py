@@ -12,7 +12,7 @@ class TestTasks(TestCase):
         self.user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
         self.worker = User.objects.create_user('Dohn', 'lennon@thebeatles.com', 'johnpassword')
         self.client.login(username='john', password='johnpassword')
-        self.status = Status.objects.create(status='New')
+        self.status = Status.objects.create(name='New')
         self.label = Label.objects.create(name='New')
 
     def test_all_tasks(self):

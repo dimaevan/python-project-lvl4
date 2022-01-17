@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 class StatusesListView(mixins.MyLoginRequired, ListView):
@@ -14,22 +15,19 @@ class StatusesListView(mixins.MyLoginRequired, ListView):
     template_name = 'statuses/statuses_list.html'
 
 
-class StatusCreateView(mixins.MyLoginRequired, CreateView):
+class StatusCreateView(SuccessMessageMixin, mixins.MyLoginRequired, CreateView):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/statuses_add.html'
-
-    def form_valid(self, form):
-        text = _('Status successfully created ')
-        messages.add_message(self.request, messages.SUCCESS, text)
-        form.save()
-        return redirect('statuses')
+    success_message = _('Status has been successfully created ')
+    success_url = reverse_lazy('statuses')
 
 
-class StatusDetailView(mixins.MyLoginRequired, UpdateView):
+class StatusUpdateView(SuccessMessageMixin, mixins.MyLoginRequired, UpdateView):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/statuses_update.html'
+    success_message = _('Status successfully changed')
     success_url = reverse_lazy('statuses')
 
 

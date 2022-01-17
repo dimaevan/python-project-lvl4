@@ -17,8 +17,8 @@ class TestStatusesView(TestCase):
         self.client.login(username='john', password='johnpassword')
 
     def test_all_statuses(self):
-        Status.objects.create(status='New status')
-        Status.objects.create(status='New status2')
+        Status.objects.create(name='New status')
+        Status.objects.create(name='New status2')
         response = self.client.get(reverse('statuses'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'statuses/statuses_list.html')
@@ -30,24 +30,24 @@ class TestStatusesView(TestCase):
         response = self.client.get(reverse('create_status'))
         self.assertTemplateUsed(response, 'statuses/statuses_add.html')
         self.assertEqual(response.status_code, 200)
-        self.client.post(reverse('create_status'), {'status': 'new status'})
+        self.client.post(reverse('create_status'), {'name': 'new status'})
         query = Status.objects.count()
         self.assertEqual(query, 1)
 
     def test_edit_status(self):
-        status = Status.objects.create(status='Test')
+        status = Status.objects.create(name='Test')
         self.assertEqual(status.pk, 1)
         response = self.client.get(reverse('update_status', args=[status.pk]))
         self.assertTemplateUsed(response, 'statuses/statuses_update.html')
 
         response = self.client.post(reverse('update_status', args=[status.pk, ]),
-                                    {'status': 'New test'})
+                                    {'name': 'New test'})
         self.assertEqual(response.status_code, 302)
         status = Status.objects.filter(pk=status.pk)[0]
-        self.assertEqual(status.status, 'New test')
+        self.assertEqual(status.name, 'New test')
 
     def test_delete_status(self):
-        status = Status.objects.create(status='Test')
+        status = Status.objects.create(name='Test')
         response = self.client.get(reverse('delete_status', args=[status.pk]))
         self.assertTemplateUsed(response, 'statuses/status_delete.html')
         response = self.client.post(reverse('delete_status', args=[status.pk]))

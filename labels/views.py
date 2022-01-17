@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.utils.translation import gettext_lazy as _
 from django.http import HttpResponseRedirect
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 class LabelsListView(mixins.MyLoginRequired, ListView):
@@ -13,23 +14,19 @@ class LabelsListView(mixins.MyLoginRequired, ListView):
     template_name = 'labels/labels_list.html'
 
 
-class LabelCreateView(mixins.MyLoginRequired, CreateView):
+class LabelCreateView(SuccessMessageMixin, mixins.MyLoginRequired, CreateView):
     model = Label
     template_name = 'labels/label_add.html'
     fields = ['name']
+    success_message = _('Label has been successfully created ')
     success_url = reverse_lazy('labels')
 
-    def form_valid(self, form):
-        text = _('The label has been successfully created ')
-        messages.add_message(self.request, messages.SUCCESS, text)
-        form.save()
-        return redirect('statuses')
 
-
-class LabelUpdateView(mixins.MyLoginRequired, UpdateView):
+class LabelUpdateView(SuccessMessageMixin, mixins.MyLoginRequired, UpdateView):
     model = Label
     template_name = 'labels/label_update.html'
     fields = ['name']
+    success_message = _('Label successfully changed')
     success_url = reverse_lazy('labels')
 
 
