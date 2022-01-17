@@ -1,6 +1,7 @@
 from django import forms
 from . models import Task
 from django.contrib.auth.models import User
+from django.utils.translation import gettext as _
 
 
 class UserModelChoiceField(forms.ModelChoiceField):
@@ -10,9 +11,8 @@ class UserModelChoiceField(forms.ModelChoiceField):
 
 
 class TaskForm(forms.ModelForm):
-    executor = UserModelChoiceField(User.objects.all())
+    executor = UserModelChoiceField(User.objects.all(), label=_('Executor'))
 
     class Meta:
         model = Task
         exclude = ('author',)
-
