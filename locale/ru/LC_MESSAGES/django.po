@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 17:00+0000\n"
+"POT-Creation-Date: 2022-01-17 17:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,9 +62,13 @@ msgstr "Статус успешно удалён"
 msgid "It is impossible to delete a status because it is in use "
 msgstr "Невозможно удалить статус, потому что он используется "
 
-#: tasks/filter.py:9 templates/tasks/task_filter.html:19
+#: tasks/filter.py:8 templates/tasks/task_filter.html:19
 msgid "Only your tasks"
 msgstr "Только свои задачи"
+
+#: tasks/forms.py:14 tasks/models.py:12 templates/tasks/task_filter.html:13
+msgid "Executor"
+msgstr "Исполнитель"
 
 #: tasks/models.py:9
 msgid "Name of task"
@@ -73,10 +77,6 @@ msgstr "Имя"
 #: tasks/models.py:10
 msgid "Descriptions"
 msgstr "Описание"
-
-#: tasks/models.py:12 templates/tasks/task_filter.html:13
-msgid "Executor"
-msgstr "Исполнитель"
 
 #: tasks/models.py:15 templates/tasks/task_view.html:13
 msgid "Author"
@@ -95,9 +95,21 @@ msgstr "Метки"
 msgid "Task"
 msgstr "Задачи"
 
-#: tasks/views.py:29
+#: tasks/views.py:16
+msgid "The task was successfully created"
+msgstr "Задача успешно создана"
+
+#: tasks/views.py:28
+msgid "The task has been successfully changed"
+msgstr "Задача успешно изменена"
+
+#: tasks/views.py:32
 msgid "You have not permission to delete task"
 msgstr "Задачу может удалить только её автор"
+
+#: tasks/views.py:36
+msgid "The task was successfully deleted"
+msgstr "Задача успешно удалена "
 
 #: templates/base.html:7
 msgid "Hexlet Task Manager"

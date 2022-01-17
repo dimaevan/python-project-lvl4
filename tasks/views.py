@@ -5,31 +5,35 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from . forms import TaskForm
 from task_manager import mixins
+from django.contrib.messages.views import SuccessMessageMixin
 
 
-class TaskCreateView(mixins.MyLoginRequired, CreateView):
+class TaskCreateView(SuccessMessageMixin, mixins.MyLoginRequired, CreateView):
     model = models.Task
     template_name = 'tasks/task_add.html'
     form_class = TaskForm
     success_url = reverse_lazy('tasks')
+    success_message = _('The task was successfully created')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
 
-class TaskUpdateView(mixins.MyLoginRequired, UpdateView):
+class TaskUpdateView(SuccessMessageMixin, mixins.MyLoginRequired, UpdateView):
     model = models.Task
     template_name = 'tasks/task_update.html'
     form_class = TaskForm
     success_url = reverse_lazy('tasks')
+    success_message = _('The task has been successfully changed')
 
 
-class TaskDeleteView(mixins.MyTaskMixin, DeleteView):
+class TaskDeleteView(SuccessMessageMixin, mixins.MyTaskMixin, DeleteView):
     mixin_text = _('You have not permission to delete task')
     model = models.Task
     template_name = 'tasks/task_delete.html'
     success_url = reverse_lazy('tasks')
+    success_message = _('The task was successfully deleted')
 
 
 class TaskDetailView(mixins.MyLoginRequired, DetailView):

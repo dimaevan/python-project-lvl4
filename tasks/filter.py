@@ -11,8 +11,6 @@ class TaskFilter(django_filters.FilterSet):
                                              label=text,
                                              method='filter_by_author')
 
-    executor = django_filters.ChoiceFilter(field_name='executor')
-
     def filter_by_author(self, queryset, name, value):
         if value:
             return queryset.filter(author=self.request.user)
