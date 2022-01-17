@@ -7,7 +7,7 @@
     <h2 class="mt-2">{% translate 'Add status' %}</h2>
     <form action="" method="post">
         {% csrf_token %}
-        {% bootstrap_field form.status layout='horizontal' %}
+        {% bootstrap_field form.name layout='horizontal' %}
         <button type="submit" class="btn btn-primary">{% translate 'Create' %}</button>
     </form>
 </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 13:51+0000\n"
+"POT-Creation-Date: 2022-01-17 14:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,12 +20,12 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: labels/models.py:6 statuses/models.py:6 templates/labels/labels_list.html:15
+#: labels/models.py:6 statuses/models.py:7 templates/labels/labels_list.html:15
 #: templates/statuses/statuses_list.html:14
 msgid "Name"
 msgstr "Имя"
 
-#: labels/models.py:7 statuses/models.py:7 templates/labels/labels_list.html:16
+#: labels/models.py:7 statuses/models.py:8 templates/labels/labels_list.html:16
 #: templates/statuses/statuses_list.html:15
 msgid "Data creation"
 msgstr "Дата создания"
@@ -97,7 +97,7 @@ msgstr "Менеджер задач Хекслета"
 
 #: templates/labels/label_add.html:7
 msgid "Add label"
-msgstr "Добавить метку"
+msgstr "Создать метку"
 
 #: templates/labels/label_add.html:11 templates/statuses/statuses_add.html:11
 msgid "Create"
@@ -196,7 +196,7 @@ msgstr "Удалить статус"
 
 #: templates/statuses/statuses_add.html:7
 msgid "Add status"
-msgstr "Добавить задачу"
+msgstr "Создать статус"
 
 #: templates/statuses/statuses_list.html:6
 msgid "Statuses:"
