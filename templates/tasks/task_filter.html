@@ -8,16 +8,10 @@
     <div class="p-3 mb-2 mt-2 bg-secondary bg-opacity-10 border rounded">
         <form method="get">
 
-            <div><span class="mb-1">{% translate 'Status' %} </span> {% bootstrap_field filter.form.status show_label='skip' %}
-            </div>
-            <div><span>{% translate 'Executor' %} </span> {% bootstrap_field filter.form.executor show_label='skip' %}
-            </div>
-            <div><span>{% translate 'Label one' %} </span> {% bootstrap_field filter.form.label show_label='skip' %}</div>
-
-            <div class="mt-1 mb-1">
-            <input type="checkbox" name="self_task" class="form-check-input is-valid" id="id_self_task">  <label
-                class="form-check-label" for="id_self_task">  {% translate 'Only your tasks' %}  </label>
-            </div>
+			{% bootstrap_field filter.form.status field_class='ml-2 mr-3' %}
+			{% bootstrap_field filter.form.executor field_class='ml-2 mr-3' %}
+			{% bootstrap_field filter.form.label field_class='ml-2 mr-3' %}
+			{% bootstrap_field filter.form.self_task field_class='mr-3' %}
 
 <button type="submit" class="btn btn-primary">{% translate 'Show' %}</button>
 <a class="btn btn-secondary" href="{% url 'tasks' %}" type="reset" role="button">{% translate 'Reset' %}</a>

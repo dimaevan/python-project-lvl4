@@ -14,12 +14,17 @@ class TaskFilter(django_filters.FilterSet):
 
     def filter_by_author(self, queryset, name, value):
         if value:
-            return queryset.filter(author=self.request.user)
-        else:
-            return queryset
+            return queryset.filter(author=self.request.user).order_by('pk')
+        return queryset
 
     label = django_filters.filters.ModelChoiceFilter(queryset=Label.objects.all(), label=_('Label'))
 
     class Meta:
         model = Task
         fields = ['name', 'status', 'executor', 'label', 'self_task']
+        filter_overrides = {
+            django_filters.filters.BooleanFilter: {
+                'filter_class': django_filters.filters.BooleanFilter,
+                'extra': lambda f: {'widget': forms.widgets.CheckboxInput},
+            },
+        }
