@@ -7,11 +7,7 @@
     <h2 class="mt-2">{% translate 'Update task' %} "{{object}}"</h2>
     <form action="" method="post">
         {% csrf_token %}
-        <div>{% bootstrap_field form.name %}</div>
-        <div>{% bootstrap_field form.description %}</div>
-        <div>{% bootstrap_field form.executor %}</div>
-        <div>{% bootstrap_field form.status %}</div>
-        <div>{% bootstrap_field form.label field_class=multiple %}</div>
+        {% bootstrap_field form.name %}
         <button type="submit" class="btn btn-primary">{% translate 'Change' %}</button>
     </form>
 </div>

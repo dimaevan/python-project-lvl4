@@ -17,7 +17,8 @@ class TaskFilter(django_filters.FilterSet):
             return queryset.filter(author=self.request.user).order_by('pk')
         return queryset
 
-    label = django_filters.filters.ModelChoiceFilter(queryset=Label.objects.all(), label=_('LabelOne'))
+    label = django_filters.filters.ModelChoiceFilter(queryset=Label.objects.all(),
+                                                     label=_('LabelOne'))
 
     class Meta:
         model = Task
