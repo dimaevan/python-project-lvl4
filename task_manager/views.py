@@ -8,17 +8,17 @@ from django.contrib import messages
 from django.contrib.auth import views as auth_view
 from django.utils.translation import gettext as _
 from django.contrib.auth import login
-from .forms import UserUpdateForm
+from . import forms
 
 
-class UsersDetailView(ListView):
+class UsersListView(ListView):
     model = User
     template_name = 'users/users.html'
     context_object_name = 'users'
 
 
 class UserSignUpView(CreateView):
-    form_class = UserCreationForm
+    form_class = forms.UserSignUpForm
     template_name = 'users/registration.html'
     success_url = reverse_lazy('login')
 
@@ -26,7 +26,7 @@ class UserSignUpView(CreateView):
 class UserUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     model = User
     template_name = 'users/user.html'
-    form_class = UserUpdateForm
+    form_class = forms.UserUpdateForm
 
     success_url = reverse_lazy('users')
     login_url = reverse_lazy('login')

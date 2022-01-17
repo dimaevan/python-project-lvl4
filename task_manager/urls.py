@@ -14,7 +14,7 @@ urlpatterns = [
     path('tasks/', include('tasks.urls')),
     path('labels/', include('labels.urls')),
 
-    path('users/', views.UsersDetailView.as_view(), name='users'),
+    path('users/', views.UsersListView.as_view(), name='users'),
     path('users/<int:pk>/update/', views.UserUpdateView.as_view(), name='update_user'),
     path('users/<int:pk>/delete/', views.UserDeleteView.as_view(), name='delete_user'),
     path('users/create/', views.UserSignUpView.as_view(), name='registration'),
@@ -23,6 +23,6 @@ urlpatterns = [
     path('logout/', views.UserLogout.as_view(), name='logout'),
 ]
 
-dotenv.load_dotenv('.env')
-if os.environ.get('GUNICORN_STATIC'):
-    urlpatterns += staticfiles_urlpatterns()
+# dotenv.load_dotenv('.env')
+# if os.environ.get('GUNICORN_STATIC'):
+#     urlpatterns += staticfiles_urlpatterns()

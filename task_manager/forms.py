@@ -8,3 +8,11 @@ class UserUpdateForm(UserCreationForm):
         model = User
         fields = ['first_name', 'last_name', 'username', 'password1',
                   'password2']
+
+
+class UserSignUpForm(UserCreationForm):
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'password1',
+                  'password2']
