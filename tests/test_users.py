@@ -26,3 +26,18 @@ class TestUsers(TestCase):
         self.assertEqual(response.status_code, 302)
         user1 = User.objects.filter(pk=user1.pk)[0]
         self.assertEqual(user1.first_name, 'User1')
+
+    def test_register_user(self):
+        response = self.client.get(reverse('registration'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'users/registration.html')
+
+        response = self.client.post(reverse('registration'), {'username': 'username1',
+                                                              'first_name': 'User',
+                                                              'last_name': 'Last',
+                                                              'password1': '12341234',
+                                                              'password2': '12341234'})
+        my_user = User.objects.filter(username='username1')[0]
+        self.assertEqual(my_user.username, 'username1')
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('login'))

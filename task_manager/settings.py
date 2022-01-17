@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import dj_database_url
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -133,7 +134,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/login'
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
 ROLLBAR_TOKEN = os.getenv('ROLLBAR_ACCESS_TOKEN')
