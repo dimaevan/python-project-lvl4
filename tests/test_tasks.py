@@ -18,14 +18,14 @@ class TestTasks(TestCase):
     def test_all_tasks(self):
         task1 = Task.objects.create(name='New', author=self.user, description='',
                                     status=self.status, executor=self.worker)
-        task1.label.add(self.label)
+        task1.labels.add(self.label)
         task1.save()
         response = self.client.get(reverse('tasks'))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'New')
         task2 = Task.objects.create(name='New2', author=self.user, description='',
                                     status=self.status, executor=self.worker)
-        task2.label.add(self.label)
+        task2.labels.add(self.label)
         response = self.client.get(reverse('tasks'))
         self.assertContains(response, 'New')
         self.assertContains(response, 'New2')
@@ -48,7 +48,7 @@ class TestTasks(TestCase):
     def test_update_task(self):
         task1 = Task.objects.create(name='New', author=self.user, description='',
                                     status=self.status, executor=self.worker)
-        task1.label.add(self.label)
+        task1.labels.add(self.label)
         task1.save()
         self.assertEqual(task1.pk, 1)
 
@@ -67,7 +67,7 @@ class TestTasks(TestCase):
     def test_delete_task(self):
         task1 = Task.objects.create(name='New', author=self.user, description='',
                                     status=self.status, executor=self.worker)
-        task1.label.add(self.label)
+        task1.labels.add(self.label)
         task1.save()
         response = self.client.get(reverse('delete_task', args=[task1.pk]))
         self.assertTemplateUsed(response, 'tasks/task_delete.html')
@@ -80,7 +80,7 @@ class TestTasks(TestCase):
     def test_view_task(self):
         task1 = Task.objects.create(name='New', author=self.user, description='',
                                     status=self.status, executor=self.worker)
-        task1.label.add(self.label)
+        task1.labels.add(self.label)
         task1.save()
         response = self.client.get(reverse('view_task', args=[task1.pk]))
         self.assertTemplateUsed(response, 'tasks/task_view.html')

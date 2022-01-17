@@ -15,10 +15,10 @@
             <li class="list-group-item">{% translate 'Status' %} : {{task.status}}</li>
             <li class="list-group-item">{% translate 'Date creation' %} : {{task.created|date:"D d M Y"}}</li>
 
-            {% if task.label.all %}
+            {% if task.labels.all %}
             <li class="list-group-item">
                 {% translate 'Labels' %}:
-                {% for label in task.label.all %}
+                {% for label in task.labels.all %}
                 <a href="#">{{ label }}</a>
                 {% endfor %}
             </li>
