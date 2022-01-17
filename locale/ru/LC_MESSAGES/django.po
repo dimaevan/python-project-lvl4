@@ -256,7 +256,7 @@ msgstr "Дата создания"
 
 #: templates/tasks/task_update.html:7
 msgid "Update task"
-msgstr "Изменить задачу"
+msgstr "Изменение задачи"
 
 #: templates/tasks/task_update.html:15 templates/users/user.html:10
 msgid "Change"

@@ -4,7 +4,7 @@
 {% load bootstrap5 %}
 
 <div>
-    <h2 class="mt-2">{% translate 'Update task' %} "{{object}}"</h2>
+    <h2 class="mt-2">{% translate 'Update task' %} </h2>
     <form action="" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
