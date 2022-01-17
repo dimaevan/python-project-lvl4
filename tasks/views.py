@@ -6,6 +6,9 @@ from django.utils.translation import gettext as _
 from . forms import TaskForm
 from task_manager import mixins
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
+from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
 
 
 class TaskCreateView(SuccessMessageMixin, mixins.MyLoginRequired, CreateView):
@@ -35,6 +38,15 @@ class TaskDeleteView(SuccessMessageMixin, mixins.MyTaskMixin, DeleteView):
     template_name = 'tasks/task_delete.html'
     success_url = reverse_lazy('tasks')
     success_message = _('The task was successfully deleted')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        text_success = _('The task was successfully deleted')
+        success_url = self.get_success_url()
+        self.object.delete()
+        messages.add_message(self.request, messages.INFO, text_success)
+        return HttpResponseRedirect(success_url)
+
 
 
 class TaskDetailView(mixins.MyLoginRequired, DetailView):

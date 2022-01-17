@@ -114,7 +114,7 @@ msgstr "Задачу может удалить только её автор"
 
 #: tasks/views.py:37
 msgid "The task was successfully deleted"
-msgstr "Задача успешно удалена "
+msgstr "Задача успешно удалена"
 
 #: templates/base.html:7
 msgid "Hexlet Task Manager"
