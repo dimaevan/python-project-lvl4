@@ -31,6 +31,8 @@ mm:
 su:
 	@python manage.py createsuperuser
 
+str:
+	python manage.py makemessages -l ru
 gt:
 	@python manage.py makemessages -a
 tr:
