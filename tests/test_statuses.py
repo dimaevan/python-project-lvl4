@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from statuses.models import Status
-from django.contrib.auth.models import User
+from task_manager.models import User
 
 
 class TestStatusesViewNoUser(TestCase):

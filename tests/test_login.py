@@ -1,5 +1,5 @@
 from django.test import LiveServerTestCase
-from django.contrib.auth.models import User
+from task_manager.models import User
 
 
 class TestViews(LiveServerTestCase):

@@ -2,6 +2,7 @@ import django_filters
 from .models import Task
 from django import forms
 from django.utils.translation import gettext as _
+from labels.models import Label
 
 
 class TaskFilter(django_filters.FilterSet):
@@ -16,6 +17,11 @@ class TaskFilter(django_filters.FilterSet):
             return queryset.filter(author=self.request.user)
         else:
             return queryset
+
+    label = django_filters.filters.ModelChoiceFilter(
+            queryset=Label.objects.all(),
+            label=_('Label')
+        )
 
     class Meta:
         model = Task

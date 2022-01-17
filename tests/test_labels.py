@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from labels.models import Label
-from django.contrib.auth.models import User
+from task_manager.models import User
 
 
 class TestLabels(TestCase):
