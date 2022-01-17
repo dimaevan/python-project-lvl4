@@ -52,7 +52,7 @@ class UserDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
         return obj.username == self.request.user.username
 
     def handle_no_permission(self):
-        text = _('You have not permission to delete this account')
+        text = _('You have not permission to edit this user.')
         messages.add_message(self.request, messages.WARNING, text)
         return redirect('users')
 
