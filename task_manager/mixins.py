@@ -21,5 +21,5 @@ class MyTaskMixin(UserPassesTestMixin, MyLoginRequired):
         return obj.author.id == self.request.user.id
 
     def handle_no_permission(self):
-        messages.add_message(self.request, messages.WARNING, self.mixin_text)
+        messages.add_message(self.request, messages.ERROR, self.mixin_text)
         return redirect('tasks')
