@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 12:20+0000\n"
+"POT-Creation-Date: 2022-01-17 13:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgid "Data creation"
 msgstr "Дата создания"
 
 #: labels/views.py:23
-msgid "The label has been successfully created"
+msgid "The label has been successfully created "
 msgstr "Метка успешно создана "
 
 #: labels/views.py:40
@@ -59,14 +59,10 @@ msgid "Only your tasks"
 msgstr "Только свои задачи"
 
 #: tasks/models.py:9
-#, fuzzy
-#| msgid "Update task"
 msgid "Name of task"
 msgstr "Изменить задачу"
 
 #: tasks/models.py:10
-#, fuzzy
-#| msgid "Date creation"
 msgid "Description"
 msgstr "Дата создания"
 
@@ -88,14 +84,10 @@ msgid "Label"
 msgstr "Метки"
 
 #: tasks/models.py:21
-#, fuzzy
-#| msgid "Tasks"
 msgid "Task"
 msgstr "Задачи"
 
 #: tasks/views.py:29
-#, fuzzy
-#| msgid "You have not permission to delete this task"
 msgid "You have not permission to delete task"
 msgstr "Задачу может удалить только её автор"
 
@@ -157,7 +149,7 @@ msgstr "Практические курсы программирования"
 
 #: templates/main_page.html:12
 msgid "Know more"
-msgstr "Подробнее"
+msgstr "Узнать больше"
 
 #: templates/nav.html:5
 msgid "Task manager"
