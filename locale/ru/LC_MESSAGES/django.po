@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-16 12:44+0000\n"
+"POT-Creation-Date: 2022-01-17 10:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: labels/models.py:6 tasks/models.py:15 templates/tasks/task_filter.html:13
+#: labels/models.py:6 tasks/models.py:17 templates/tasks/task_filter.html:15
 msgid "Label"
 msgstr "Метки"
 
@@ -34,7 +34,7 @@ msgstr "Дата создания"
 msgid "Name"
 msgstr "Имя"
 
-#: tasks/filter.py:8
+#: tasks/filter.py:8 templates/tasks/task_filter.html:19
 msgid "Only your tasks"
 msgstr "Только свои задачи"
 
@@ -50,20 +50,20 @@ msgstr "Изменить задачу"
 msgid "Description"
 msgstr "Дата создания"
 
-#: tasks/models.py:11 templates/tasks/task_filter.html:12
+#: tasks/models.py:12 templates/tasks/task_filter.html:13
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: tasks/models.py:13 templates/tasks/task_view.html:13
+#: tasks/models.py:15 templates/tasks/task_view.html:13
 msgid "Author"
 msgstr "Автор"
 
-#: tasks/models.py:14 templates/tasks/task_filter.html:11
+#: tasks/models.py:16 templates/tasks/task_filter.html:11
 #: templates/tasks/task_view.html:15
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/models.py:19
+#: tasks/models.py:21
 #, fuzzy
 #| msgid "Tasks"
 msgid "Task"
@@ -96,7 +96,7 @@ msgstr "Вы точно хотите удалить метку"
 #: templates/labels/label_delete.html:10 templates/labels/labels_list.html:32
 #: templates/statuses/status_delete.html:10
 #: templates/statuses/statuses_list.html:32 templates/tasks/task_delete.html:10
-#: templates/tasks/task_filter.html:36 templates/users/users.html:30
+#: templates/tasks/task_filter.html:39 templates/users/users.html:30
 msgid "Delete"
 msgstr "Удалить"
 
@@ -109,7 +109,7 @@ msgstr "Изменить статус"
 msgid "Update"
 msgstr "Изменить"
 
-#: templates/labels/labels_list.html:6 templates/nav.html:24
+#: templates/labels/labels_list.html:6 templates/nav.html:21
 #: templates/tasks/task_view.html:20
 msgid "Labels"
 msgstr "Метки"
@@ -119,7 +119,7 @@ msgid "Create new label"
 msgstr "Создать новую метку"
 
 #: templates/labels/labels_list.html:30
-#: templates/statuses/statuses_list.html:30 templates/tasks/task_filter.html:34
+#: templates/statuses/statuses_list.html:30 templates/tasks/task_filter.html:37
 #: templates/users/users.html:28
 msgid "Edit"
 msgstr "Изменить"
@@ -148,19 +148,19 @@ msgstr "Пользователи"
 msgid "Statuses"
 msgstr "Статусы"
 
-#: templates/nav.html:21 templates/tasks/task_filter.html:6
+#: templates/nav.html:24 templates/tasks/task_filter.html:6
 msgid "Tasks"
 msgstr "Задачи"
 
-#: templates/nav.html:35
+#: templates/nav.html:36
 msgid "Logout"
 msgstr "Выход"
 
-#: templates/nav.html:39 templates/users/login.html:7
+#: templates/nav.html:40 templates/users/login.html:7
 msgid "Login"
 msgstr "Вход"
 
-#: templates/nav.html:42 templates/users/registration.html:10
+#: templates/nav.html:43 templates/users/registration.html:10
 msgid "SignUp"
 msgstr "Регистрация"
 
@@ -192,15 +192,15 @@ msgstr "Вы точно хотите удалить задачу"
 msgid "Create new task"
 msgstr "Создать новую задачу"
 
-#: templates/tasks/task_filter.html:19
+#: templates/tasks/task_filter.html:22
 msgid "Filter"
 msgstr "Фильтр"
 
-#: templates/tasks/task_filter.html:20
+#: templates/tasks/task_filter.html:23
 msgid "Reset"
 msgstr "Сброс"
 
-#: templates/tasks/task_filter.html:31
+#: templates/tasks/task_filter.html:34
 msgid "View"
 msgstr "Просмотр"
 
@@ -245,8 +245,8 @@ msgid "Password"
 msgstr "Пароль"
 
 #: templates/users/login.html:23
-msgid "Sign in"
-msgstr "Вход"
+msgid "EnterIn"
+msgstr "Войти"
 
 #: templates/users/registration.html:6
 msgid "Registration"
@@ -274,8 +274,9 @@ msgstr "Полное имя"
 msgid "Data joined"
 msgstr "Дата создания"
 
-#, fuzzy
-#~| msgid "Users"
+#~ msgid "Sign in"
+#~ msgstr "Вход"
+
 #~ msgid "Username"
 #~ msgstr "Пользователи"
 
