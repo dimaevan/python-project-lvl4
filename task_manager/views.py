@@ -76,6 +76,7 @@ class UserLoginView(auth_view.LoginView):
 
 class UserLogout(auth_view.LogoutView):
     def dispatch(self, request, *args, **kwargs):
+        text = _('You have successfully logged out.')
         if request.user.is_authenticated:
-            messages.info(request, "You have successfully logged out.")
+            messages.info(request, text)
         return super().dispatch(request, *args, **kwargs)
