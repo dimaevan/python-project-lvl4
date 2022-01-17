@@ -7,7 +7,7 @@ from django.utils.translation import gettext as _
 
 class Task(models.Model):
     name = models.CharField(max_length=100, verbose_name=_('Name of task'))
-    description = models.TextField(null=True, verbose_name=_('Description'))
+    description = models.TextField(null=True, verbose_name=_('Descriptions'))
     executor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Executor',
                                  verbose_name=_('Executor'))
 

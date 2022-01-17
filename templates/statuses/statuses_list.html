@@ -4,7 +4,7 @@
 {% block content %}
 <div>
     <h2 class="mt-2">{% translate 'Statuses:' %}</h2>
-    <a href="{% url 'create_status' %}" class="btn btn-primary mt-2" role="button">{% translate 'Create new status' %}</a>
+    <a href="{% url 'create_status' %}" class="btn btn-primary mt-2" role="button">{% translate 'Create status' %}</a>
 
     {% if object_list %}
         <table class="table">
@@ -17,8 +17,6 @@
         </tr>
         </thead>
         <tbody>
-
-
         {% for status in object_list %}
         <tr>
                 <th scope="row">{{ status.pk }}</th>

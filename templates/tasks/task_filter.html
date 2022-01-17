@@ -3,7 +3,7 @@
 {% block content %}
 {% load bootstrap5 %}
 <div>
-    <h2 class="mt-2">{% translate 'Tasks' %}:</h2>
+    <h2 class="mt-2">{% translate 'Tasks' %}</h2>
     <a href="{% url 'add_task' %}" class="btn btn-primary mt-2" role="button">{% translate 'Create new task' %}</a>
     <div class="p-3 mb-2 mt-2 bg-secondary bg-opacity-10 border rounded">
         <form method="get">
@@ -12,14 +12,14 @@
             </div>
             <div><span>{% translate 'Executor' %} </span> {% bootstrap_field filter.form.executor show_label='skip' %}
             </div>
-            <div><span>{% translate 'Label' %} </span> {% bootstrap_field filter.form.label show_label='skip' %}</div>
+            <div><span>{% translate 'Label one' %} </span> {% bootstrap_field filter.form.label show_label='skip' %}</div>
 
             <div class="mt-1 mb-1">
             <input type="checkbox" name="self_task" class="form-check-input is-valid" id="id_self_task">  <label
                 class="form-check-label" for="id_self_task">  {% translate 'Only your tasks' %}  </label>
             </div>
 
-<button type="submit" class="btn btn-primary">{% translate 'Filter' %}</button>
+<button type="submit" class="btn btn-primary">{% translate 'Show' %}</button>
 <a class="btn btn-secondary" href="{% url 'tasks' %}" type="reset" role="button">{% translate 'Reset' %}</a>
 </form>
 </div>

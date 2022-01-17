@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 13:04+0000\n"
+"POT-Creation-Date: 2022-01-17 13:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,11 +60,11 @@ msgstr "Только свои задачи"
 
 #: tasks/models.py:9
 msgid "Name of task"
-msgstr "Изменить задачу"
+msgstr "Имя"
 
 #: tasks/models.py:10
-msgid "Description"
-msgstr "Дата создания"
+msgid "Descriptions"
+msgstr "Описание"
 
 #: tasks/models.py:12 templates/tasks/task_filter.html:13
 msgid "Executor"
@@ -79,7 +79,7 @@ msgstr "Автор"
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/models.py:17 templates/tasks/task_filter.html:15
+#: tasks/models.py:17
 msgid "Label"
 msgstr "Метки"
 
@@ -100,22 +100,24 @@ msgid "Add label"
 msgstr "Добавить метку"
 
 #: templates/labels/label_add.html:11 templates/statuses/statuses_add.html:11
-#: templates/tasks/task_update.html:15 templates/users/user.html:10
-msgid "Submit"
-msgstr "Подтвердить"
+msgid "Create"
+msgstr "Создать"
 
 #: templates/labels/label_delete.html:7
-msgid "Do you really want to delete label"
-msgstr "Вы точно хотите удалить метку"
+msgid "Delete label"
+msgstr "Удаление метки"
 
-#: templates/labels/label_delete.html:10 templates/labels/labels_list.html:32
-#: templates/statuses/status_delete.html:10
-#: templates/statuses/statuses_list.html:32 templates/tasks/task_delete.html:10
-#: templates/tasks/task_filter.html:39 templates/users/users.html:30
-msgid "Delete"
-msgstr "Удалить"
+#: templates/labels/label_delete.html:8 templates/statuses/status_delete.html:8
+msgid "Do you really want to delete"
+msgstr "Вы точно хотите удалить задачу"
+
+#: templates/labels/label_delete.html:11
+#: templates/statuses/status_delete.html:11
+msgid "Yes, Delete"
+msgstr "Да, удалить"
 
 #: templates/labels/label_update.html:7
+#: templates/statuses/statuses_update.html:7
 msgid "Update status"
 msgstr "Изменить статус"
 
@@ -130,14 +132,22 @@ msgid "Labels"
 msgstr "Метки"
 
 #: templates/labels/labels_list.html:7
-msgid "Create new label"
+#, fuzzy
+#| msgid "Create new label"
+msgid "Create label"
 msgstr "Создать метку"
 
 #: templates/labels/labels_list.html:30
-#: templates/statuses/statuses_list.html:30 templates/tasks/task_filter.html:37
+#: templates/statuses/statuses_list.html:28 templates/tasks/task_filter.html:37
 #: templates/users/users.html:28
 msgid "Edit"
 msgstr "Изменить"
+
+#: templates/labels/labels_list.html:32
+#: templates/statuses/statuses_list.html:30 templates/tasks/task_delete.html:10
+#: templates/tasks/task_filter.html:39 templates/users/users.html:30
+msgid "Delete"
+msgstr "Удалить"
 
 #: templates/main_page.html:9
 msgid "Hello from Hexlet"
@@ -180,8 +190,8 @@ msgid "SignUp"
 msgstr "Регистрация"
 
 #: templates/statuses/status_delete.html:7
-msgid "Do you really want to delete status"
-msgstr "Вы точно хотите удалить статус"
+msgid "Delete status"
+msgstr "Удалить статус"
 
 #: templates/statuses/statuses_add.html:7
 msgid "Add status"
@@ -192,14 +202,15 @@ msgid "Statuses:"
 msgstr "Статусы"
 
 #: templates/statuses/statuses_list.html:7
-msgid "Create new status"
+msgid "Create status"
 msgstr "Создать статус"
 
 #: templates/tasks/task_add.html:7
 msgid "Add task"
 msgstr "Добавить задачу"
 
-#: templates/tasks/task_add.html:11
+#: templates/tasks/task_add.html:11 templates/tasks/task_update.html:15
+#: templates/users/user.html:10
 msgid "Change"
 msgstr "Изменить"
 
@@ -211,9 +222,13 @@ msgstr "Вы точно хотите удалить задачу"
 msgid "Create new task"
 msgstr "Создать задачу"
 
+#: templates/tasks/task_filter.html:15
+msgid "Label one"
+msgstr "Метка"
+
 #: templates/tasks/task_filter.html:22
-msgid "Filter"
-msgstr "Фильтр"
+msgid "Show"
+msgstr "Показать"
 
 #: templates/tasks/task_filter.html:23
 msgid "Reset"
@@ -294,6 +309,21 @@ msgstr "Полное имя"
 #: templates/users/users.html:14
 msgid "Data joined"
 msgstr "Дата создания"
+
+#~ msgid "Do you really want to delete label"
+#~ msgstr "Вы точно хотите удалить метку"
+
+#~ msgid "Do you really want to delete status"
+#~ msgstr "Вы точно хотите удалить статус"
+
+#~ msgid "Create task"
+#~ msgstr "Создать задачу"
+
+#~ msgid "Submit"
+#~ msgstr "Подтвердить"
+
+#~ msgid "Filter"
+#~ msgstr "Фильтр"
 
 #~ msgid "Sign in"
 #~ msgstr "Вход"

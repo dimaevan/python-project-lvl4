@@ -3,15 +3,15 @@
 {% block content %}
 
 <div>
-    <h2 class="mt-2">{% translate 'Labels' %}:</h2>
-    <a href="{% url 'create_label' %}" class="btn btn-primary mt-2" role="button" >{% translate 'Create new label' %}</a>
+    <h2 class="mt-2">{% translate 'Labels' %}</h2>
+    <a href="{% url 'create_label' %}" class="btn btn-primary mt-2" role="button" >{% translate 'Create label' %}</a>
 
     {% if object_list %}
 
     <table class="table mt-1">
         <thead>
         <tr>
-            <th scope="row">Id</th>
+            <th scope="row">ID</th>
             <th>{% translate 'Name' %}</th>
             <th>{% translate 'Data creation' %}</th>
             <th></th>
